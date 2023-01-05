@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Smart TODO App</title>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--APP CSS-->
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/layout.css" />
+    <link rel="stylesheet" href="/styles/navbar.css" />
+    <!--External CSS-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@1,300;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <!--APP JS-->
+    <script src="/vendor/jquery-3.0.0.js"></script>
+    <script defer src="/scripts/app.js"></script>
+
+    <!--External JS-->
+    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar">
+        <span class="navbar-title" id="title">Smart ToDo App</span>
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            new TypeIt("#title")
+              .pause(1000)
+              .delete(8, { delay: 1000 })
+              .type("List For You")
+              .go();
+          });
+        </script>
+        <span class="text"
+          ><div class="text-input">
+            <form id="" method="POST" action="">
+              <label for="search-text">What's next?</label>
+              <button type="submit">Submit</button>
+              <textarea name="text" id=""> </textarea>
+            </form>
+          </div>
+        </span>
+        <span class="navbar-menu">
+          <div class="dropdown">
+            <button class="dropbtn">Dropdown</button>
+            <div class="dropdown-content">
+              <a href="#">My Lists</a>
+              <a href="#">Login</a>
+            </div>
+          </div>
+        </span>
+      </nav>
+    </header>
+    <main>
+      <section class="item-entry"></section>
+      <section class="lists">
+        <!-- Books -->
+        <div class="Books-container">
+          <h3 class="Books-top">To Read</h3>
+          <ul class="books-list"></ul>
+        </div>
+
+        <!-- Movies -->
+        <div class="Movies-container">
+          <h3 class="Movies-top">To Watch</h3>
+          <ul class="Movies-list"></ul>
+        </div>
+
+        <!-- products -->
+
+        <div class="Products-container">
+          <h3 class="Products-top">To Buy</h3>
+          <ul class="Products-list"></ul>
+        </div>
+
+        <!-- restaurants -->
+
+        <div class="Restaurants-container">
+          <h3 class="Restaurants-top">To Eat</h3>
+          <ul class="Restaurants-list"></ul>
+        </div>
+
+        <!-- Other -->
+      </section>
+    </main>
+    <footer>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <p>
+        &copy; 2023 @greenlemonkp, @LexVN-WD, @Nicholasburgess17,
+        @Stevenls811118
+      </p>
+    </footer>
+  </body>
+</html>
