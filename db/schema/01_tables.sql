@@ -1,0 +1,41 @@
+-- Drop and recreate Users table (Example)
+
+DROP TABLE IF EXISTS users, film_series, restaurants, books, products, no_match CASCADE;
+
+
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY NOT NULL,
+  name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE film_series (
+  id SERIAL PRIMARY KEY NOT NULL,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  title VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE restaurants (
+  id SERIAL PRIMARY KEY NOT NULL,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  title VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE books (
+  id SERIAL PRIMARY KEY NOT NULL,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  title VARCHAR(255) NOT NULL
+  -- author VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE products (
+  id SERIAL PRIMARY KEY NOT NULL,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  title VARCHAR(255) NOT NULL
+  -- quantity INTEGER NOT NULL DEFAULT 1
+);
+
+CREATE TABLE no_match (
+  id SERIAL PRIMARY KEY NOT NULL,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  title VARCHAR(255) NOT NULL
+);
