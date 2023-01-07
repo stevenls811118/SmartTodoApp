@@ -28,43 +28,52 @@ footer {
   background-color: bisque;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  width: 25%;
-  height: 600px;
-
+  width: 15%;
+  height: 250px
 
 }
 
-.Movies-container {
-  background-color: whitesmoke;
+.books-list {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 25%;
-  height: 600px;
-
 }
 
-.Products-container {
-  background-color: bisque;
+.item-entry {
+  height: 200px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  width: 25%;
-  height: 600px;
-
 }
 
-.Restaurants-container {
-  background-color: whitesmoke;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 25%;
-  height: 600px;
+// .Movies-container {
+//   background-color: whitesmoke;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   width: 25%;
+//   height: 600px;
 
-}
+// }
+
+// .Products-container {
+//   background-color: bisque;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   width: 25%;
+//   height: 600px;
+
+// }
+
+// .Restaurants-container {
+//   background-color: whitesmoke;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   width: 25%;
+//   height: 600px;
+
+// }
