@@ -1,6 +1,6 @@
 -- Drop and recreate Users table (Example)
 
-DROP TABLE IF EXISTS users, film_series, restaurants, books, products, no_match CASCADE;
+DROP TABLE IF EXISTS users, lists, items, books, film_series, no_match, products, restaurants, users CASCADE;
 
 
 CREATE TABLE users (
@@ -8,34 +8,14 @@ CREATE TABLE users (
   name VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE film_series (
+CREATE TABLE lists (
   id SERIAL PRIMARY KEY NOT NULL,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  title VARCHAR(255) NOT NULL
+  list_name VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE restaurants (
+CREATE TABLE items (
   id SERIAL PRIMARY KEY NOT NULL,
-  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  title VARCHAR(255) NOT NULL
-);
-
-CREATE TABLE books (
-  id SERIAL PRIMARY KEY NOT NULL,
-  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  title VARCHAR(255) NOT NULL
-  -- author VARCHAR(255) NOT NULL
-);
-
-CREATE TABLE products (
-  id SERIAL PRIMARY KEY NOT NULL,
-  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  title VARCHAR(255) NOT NULL
-  -- quantity INTEGER NOT NULL DEFAULT 1
-);
-
-CREATE TABLE no_match (
-  id SERIAL PRIMARY KEY NOT NULL,
-  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  title VARCHAR(255) NOT NULL
+  list_id INTEGER REFERENCES lists(id) ON DELETE CASCADE,
+  item_name VARCHAR(255) NOT NULL
 );
