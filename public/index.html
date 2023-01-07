@@ -8,19 +8,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!--APP CSS-->
-    <link rel="stylesheet" type="text/css" href="/vendor/normalize-4.1.1.css" />
-    <link rel="stylesheet" type="text/css" href="/vendor/border-box.css" />
-    <link rel="stylesheet" type="text/css" href="./styles/drag&drop.css" />
-    <link rel="stylesheet" type="text/css" href="/styles/layout.css" />
-    <link rel="stylesheet" type="text/css" href="/styles/navbar.css" />
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" />
+    <link rel="stylesheet" href="./styles/drag&drop.css" />
+    <link rel="stylesheet" href="/styles/layout.css" />
+    <link rel="stylesheet" href="/styles/navbar.css" />
     <!--External CSS-->
     <link
       href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@1,300;1,600&display=swap"
       rel="stylesheet"
     />
     <!--APP JS-->
-    <script src="/vendor/jquery-3.0.0.js"></script>
-    <script defer src="/scripts/app.js"></script>
+    <script defer src="./vendor/jquery-3.6.3.js"></script>
+    <script defer src="./scripts/app.js"></script>
+    <script defer src="./scripts/drag&drop.js"></script>
+    <script defer src="./scripts/insertItemToList.js"></script>
 
     <!--External JS-->
     <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
@@ -54,31 +56,32 @@
     <main>
       <section class="item-entry">
         <div class="text-input">
-          <form id="" method="POST" action="">
-            <input type="text" id="myInput" placeholder="What's next?" />
-            <button type="submit">Add</button>
+          <h3 class="todo-title">What to do next?</h3>
+          <form id="input-form">
+            <input type="text" id="myInput" placeholder="What's next?" required>
+            <input type="submit" class="addBtn">
           </form>
         </div>
       </section>
       <section class="lists">
         <!-- Books -->
         <div class="Books-section">
-          <h3 class="Books-top">Books: To do</h3>
+          <h3 class="Books-top">Books To Read: </h3>
           <ol class="Books-container">
             <li class="listitems">
-              <div class ="text">This is #1 to do</div>
+              <div class ="text">Book #1 to read</div>
             </li>  
             <li class="listitems">
-              <div class ="text">This is #2 to do</div>
+              <div class ="text">Book #2 to read</div>
             </li>
             <li class="listitems">
-              <div class ="text">This is #3 to do</div>
+              <div class ="text">Book #3 to read</div>
             </li>
             <li class="listitems">
-              <div class ="text">This is #4 to do</div>
+              <div class ="text">Book #4 to read</div>
             </li>
             <li class="listitems">
-              <div class ="text">This is #5 to do</div>
+              <div class ="text">Book #5 to read</div>
             </li>
           </ol>
         </div>
@@ -111,12 +114,5 @@
         @Stevenls811118
       </span>
     </footer>
-
-    <script>
-      let dragBox = document.querySelector('.Books-container');
-      new Sortable(dragBox, {
-        animation: 400
-      })
-    </script>
   </body>
 </html>
