@@ -8,11 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!--APP CSS-->
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
-    <link rel="stylesheet" href="/vendor/border-box.css" />
-    <link rel="stylesheet" href="/styles/main.css" />
-    <link rel="stylesheet" href="/styles/layout.css" />
-    <link rel="stylesheet" href="/styles/navbar.css" />
+    <link rel="stylesheet" type="text/css" href="/vendor/normalize-4.1.1.css" />
+    <link rel="stylesheet" type="text/css" href="/vendor/border-box.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/drag&drop.css" />
+    <link rel="stylesheet" type="text/css" href="/styles/layout.css" />
+    <link rel="stylesheet" type="text/css" href="/styles/navbar.css" />
     <!--External CSS-->
     <link
       href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@1,300;1,600&display=swap"
@@ -24,6 +24,7 @@
 
     <!--External JS-->
     <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
   </head>
 
   <body>
@@ -61,14 +62,26 @@
       </section>
       <section class="lists">
         <!-- Books -->
-        <div class="Books-container">
-          <h3 class="Books-top">To Do</h3>
-          <ul class="books-list">
-            <li>SAMPLE</li>
-            <li>sample2</li>
-          </ul>
+        <div class="Books-section">
+          <h3 class="Books-top">Books: To do</h3>
+          <ol class="Books-container">
+            <li class="listitems">
+              <div class ="text">This is #1 to do</div>
+            </li>  
+            <li class="listitems">
+              <div class ="text">This is #2 to do</div>
+            </li>
+            <li class="listitems">
+              <div class ="text">This is #3 to do</div>
+            </li>
+            <li class="listitems">
+              <div class ="text">This is #4 to do</div>
+            </li>
+            <li class="listitems">
+              <div class ="text">This is #5 to do</div>
+            </li>
+          </ol>
         </div>
-
         <!-- Movies -->
         <!-- <div class="Movies-container">
           <h3 class="Movies-top">To Watch</h3>
@@ -98,5 +111,12 @@
         @Stevenls811118
       </span>
     </footer>
+
+    <script>
+      let dragBox = document.querySelector('.Books-container');
+      new Sortable(dragBox, {
+        animation: 400
+      })
+    </script>
   </body>
 </html>
