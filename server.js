@@ -45,6 +45,7 @@ const otherRoutes = require("./routes/other");
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
 app.use("/api/users", userApiRoutes);
 app.use("/api/widgets", widgetApiRoutes);
+app.use("/api/books", booksRoutes);
 // app.use("/users", usersRoutes);
 // Note: mount other resources here, using the same pattern above
 
