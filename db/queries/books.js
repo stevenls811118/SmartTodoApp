@@ -20,8 +20,8 @@ const insertItem = (input) => {
 
 const getItems = () => {
   const queryString = `
-  SELECT * FROM items
-
+  SELECT *
+  FROM items
   `;
 
   return db
@@ -35,4 +35,21 @@ const getItems = () => {
     });
 };
 
-module.exports = { insertItem, getItems };
+const deleteItem = (name) => {
+  const queryString = `
+  DELETE FROM items
+  WHERE item_name = $1
+  `;
+
+  return db
+    .query(queryString, [name])
+    .then((result) => {
+      return result.rows;
+    })
+    .catch((e) => {
+      console.log(e);
+      return e;
+    });
+};
+
+module.exports = { insertItem, getItems, deleteItem };

@@ -1,7 +1,7 @@
 const addToList = (input) => {
   const $newItem = $(`
     <li class="listitems">
-      <div class ="text">${input} to read</div>
+      <div class="text" id="">${input}</div>
     </li>
   `);
   $(".Books-container").append($newItem);
@@ -24,24 +24,33 @@ $(document).ready(() => {
       },
     });
   });
-  $.ajax({
-    type: "GET",
-    url: `/api/books`,
-    success: (items) => {
-      renderItems(items);
-      console.log("items", items);
-    },
-  });
 
   const renderItems = (items) => {
     for (let item of items) {
       addToList(item.item_name);
     }
   };
+  
+  $.ajax({
+    type: "GET",
+    url: `/api/books`,
+    success: (items) => {
+      console.log(items);
+      renderItems(items);
+    },
+  });
 
-  console.log($("li"));
-  $(document).on("dblclick", "li", function () {
-    console.log("delete");
+  $(document).on("dblclick", "li", function() {
+    let nameToDelete = $(this).text();
+    console.log("delete", nameToDelete);
     $(this).toggleClass("strike").fadeOut("slow");
+    $.ajax({
+      type: "DELETE",
+      url: `/api/books`,
+      data: { deleteBook: nameToDelete },
+      success: () => {
+        console.log('Removed book:', nameToDelete);
+      },
+    });
   });
 });
