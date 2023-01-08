@@ -1,7 +1,6 @@
-const db = require('../connection');
+const db = require("../connection");
 
 const insertItem = (input) => {
-
   const queryString = `
   INSERT INTO items (list_id, item_name)
   VALUES (1, $1)
@@ -13,10 +12,28 @@ const insertItem = (input) => {
     .then((result) => {
       return result.rows[0];
     })
-    .catch(e => {
+    .catch((e) => {
       console.log(e);
       return e;
     });
-}
+};
 
-module.exports = { insertItem };
+const queryList = () => {
+  const queryString = `
+  SELECT *
+  FROM items
+  `;
+
+  return db
+    .query(queryString, [])
+    .then((result) => {
+      console.log(result.rows);
+      return result.rows;
+    })
+    .catch((e) => {
+      console.log(e);
+      return e;
+    });
+};
+
+module.exports = { insertItem, queryList };

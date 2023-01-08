@@ -9,7 +9,23 @@ const addToList = () => {
   $('.Books-container').append($newItem);
 };
 
+const createListElements = (array) => {
+  let $lists = ``;
+  for (let i of array) {
+    const $newItem = $(`
+    <li class="listitems">
+      <div class ="text">${i.item_name} to read</div>
+    </li>
+    `);
+    $lists += $newItem;
+  }
+  console.log($lists);
+
+  $('.Books-container').append($lists);
+};
+
 $(document).ready(() => {
+
   const $form = $('#input-form');
   console.log('document ready');
   $form.on('submit', function(event) {

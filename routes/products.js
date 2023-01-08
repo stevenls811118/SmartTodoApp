@@ -3,12 +3,12 @@
 // const {insertItem} = require('../db/queries/books')
 
 
-// // router.post('/', (req, res) => {
-// //  insertItem(req.body.products)
-// //  .then((result) => {
-// //     console.log(result);
-// //     res.status(200).send('Ok!');
-// //  })
-// // })
+// router.post('/', (req, res) => {
+//   insertItem(req.body.products)
+//   .then((result) => {
+//     console.log(result);
+//     res.status(200).send('Ok!');
+//   })
+// })
 
 // module.exports = router;
