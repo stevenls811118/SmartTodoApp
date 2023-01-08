@@ -1,4 +1,4 @@
-let dragBox = document.querySelector('.Books-container');
+let dragBox = document.querySelector(".Books-container");
 new Sortable(dragBox, {
-  animation: 400
+  animation: 400,
 });
