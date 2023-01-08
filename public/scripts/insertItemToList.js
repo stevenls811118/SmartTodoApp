@@ -18,13 +18,10 @@ $(document).ready(() => {
     $.ajax({
       type: "POST",
       url: `/api/books`,
-      data: $form.serialize(), // Submit the tweetText in this format to server
+      data: $form.serialize(),
       success: () => {
         addToList();
-        // $tweet.val(''); // Clear the input from textarea
-        // $counter.empty(); // Clear the counter
-        // $counter.append(`<a>140</a>`); // Reset it back to 140
       }
     });
   });
-})
+});
