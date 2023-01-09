@@ -58,6 +58,11 @@ footer {
   cursor: pointer;
 }
 
+.Books-container .listitems .strike{
+  text-decoration: line-through;
+}
+
+
 .Books-container .listitems:hover {
   background:cadetblue;
 }
