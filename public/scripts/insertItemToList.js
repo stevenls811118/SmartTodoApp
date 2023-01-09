@@ -57,7 +57,17 @@ $(document).ready(() => {
       url: `/api/books`,
       data: { todo_input: input },
       success: () => {
-        addToBookList(input);
+        
+        $('.allLists').empty();
+    
+        $.ajax({
+          type: "GET",
+          url: `/api/books`,
+          success: (items) => {
+            console.log(items);
+            renderItems(items);
+          },
+        });
       },
     });
   });
