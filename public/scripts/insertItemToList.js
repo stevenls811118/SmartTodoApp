@@ -1,4 +1,4 @@
-const addToList = (input) => {
+const addToBookList = (input) => {
   const $newItem = $(`
     <li class="listitems">
       <div class="text" id="">${input}</div>
@@ -6,6 +6,43 @@ const addToList = (input) => {
   `);
   $(".Books-container").append($newItem);
 };
+
+const addToMovieList = (input) => {
+  const $newItem = $(`
+    <li class="listitems">
+      <div class="text" id="">${input}</div>
+    </li>
+  `);
+  $(".Movies-container").append($newItem);
+};
+
+const addToProductList = (input) => {
+  const $newItem = $(`
+    <li class="listitems">
+      <div class="text" id="">${input}</div>
+    </li>
+  `);
+  $(".Products-container").append($newItem);
+};
+
+const addToRestaurantList = (input) => {
+  const $newItem = $(`
+    <li class="listitems">
+      <div class="text" id="">${input}</div>
+    </li>
+  `);
+  $(".Restaurants-container").append($newItem);
+};
+
+const addToOtherList = (input) => {
+  const $newItem = $(`
+    <li class="listitems">
+      <div class="text" id="">${input}</div>
+    </li>
+  `);
+  $(".Others-container").append($newItem);
+};
+
 
 $(document).ready(() => {
   const $form = $("#input-form");
@@ -20,14 +57,24 @@ $(document).ready(() => {
       url: `/api/books`,
       data: { todo_input: input },
       success: () => {
-        addToList(input);
+        addToBookList(input);
       },
     });
   });
 
   const renderItems = (items) => {
     for (let item of items) {
-      addToList(item.item_name);
+      if (item.list_id === 1) {
+        addToBookList(item.item_name);
+      } else if (item.list_id === 2) {
+        addToMovieList(item.item_name);
+      } else if (item.list_id === 3) {
+        addToProductList(item.item_name);
+      } else if (item.list_id === 4) {
+        addToRestaurantList(item.item_name);
+      } else if (item.list_id === 5) {
+        addToOtherList(item.item_name);
+      }
     }
   };
 
