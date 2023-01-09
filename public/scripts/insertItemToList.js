@@ -75,13 +75,13 @@ $(document).ready(() => {
   const renderItems = (items) => {
     for (let item of items) {
       if (item.list_id === 1) {
-        addToBookList(item.item_name);
-      } else if (item.list_id === 2) {
         addToMovieList(item.item_name);
-      } else if (item.list_id === 3) {
-        addToProductList(item.item_name);
-      } else if (item.list_id === 4) {
+      } else if (item.list_id === 2) {
         addToRestaurantList(item.item_name);
+      } else if (item.list_id === 3) {
+        addToBookList(item.item_name);
+      } else if (item.list_id === 4) {
+        addToProductList(item.item_name);
       } else if (item.list_id === 5) {
         addToOtherList(item.item_name);
       }

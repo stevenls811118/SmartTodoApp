@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { insertItem, getItems, deleteItem } = require("../db/queries/books");
+const { insertItem, getItems, deleteItem } = require("../db/queries/smart.js");
 const omdbTypeFetch = require("../scripts/api");
 
 router.post("/", (req, res) => {
