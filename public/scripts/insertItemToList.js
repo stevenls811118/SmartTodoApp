@@ -3,7 +3,7 @@ const addToList = () => {
   let input = $('#myInput').val();
   const $newItem = $(`
     <li class="listitems">
-      <div class ="text">${input} to read</div>
+      <div class ="text">${input}</div>
     </li>
   `);
   $('.Books-container').append($newItem);
