@@ -22,7 +22,7 @@ VALUES
 (1, 'Lord of the Rings'),
 (1, 'Huckleberry Finn'),
 (1, 'Harry Potter'),
-(1, 'Harry Potter'),
+(1, 'The Great Gatsby'),
 (2, 'Avatar: The Way of Water'),
 (2, 'Violent Night'),
 (2, 'The Whale'),
