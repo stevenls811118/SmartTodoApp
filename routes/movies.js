@@ -24,7 +24,7 @@ router.post("/", (req, res) => {
         input = { name: result[1].businesses[0].name, type: yelpType };
       } else if (result[0].Type !== undefined && yelpType === undefined) {
         input = { name: result[0].Title, type: result[0].Type };
-      } else if (result[0].Type !== undefined && yelpType !== undefined) { // when apiFetch return multiple, force to movie list for now, will add user choose option feature later
+      } else if (result[0].Type !== undefined && yelpType !== undefined) { // when apiFetch return multiple, force to movie list for now, will add user choose option feature later.
         input = { name: result[0].Title, type: result[0].Type };
       }
       
