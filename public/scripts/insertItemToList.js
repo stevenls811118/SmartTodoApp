@@ -43,35 +43,47 @@ const addToOtherList = (input) => {
   $(".Others-container").append($newItem);
 };
 
-
 $(document).ready(() => {
   const $form = $("#input-form");
   console.log("document ready");
   $form.on("submit", function (event) {
     let input = $("#myInput").val();
-
+    $(".popup").css("display", "block");
     event.preventDefault();
     console.log("Submiting");
     $.ajax({
       type: "POST",
-      url: `/api/books`,
+      url: `/api/movies`,
       data: { todo_input: input },
       success: () => {
-        addToBookList(input);
+        $("#myInput").val("");
+        $(".allLists").empty();
+
+        $.ajax({
+          type: "GET",
+          url: `/api/movies`,
+          success: (items) => {
+            console.log(items);
+            renderItems(items);
+          },
+        });
       },
+    });
+    $("#closePop").on("click", () => {
+      $(".popup").css("display", "none");
     });
   });
 
   const renderItems = (items) => {
     for (let item of items) {
       if (item.list_id === 1) {
-        addToBookList(item.item_name);
-      } else if (item.list_id === 2) {
         addToMovieList(item.item_name);
-      } else if (item.list_id === 3) {
-        addToProductList(item.item_name);
-      } else if (item.list_id === 4) {
+      } else if (item.list_id === 2) {
         addToRestaurantList(item.item_name);
+      } else if (item.list_id === 3) {
+        addToBookList(item.item_name);
+      } else if (item.list_id === 4) {
+        addToProductList(item.item_name);
       } else if (item.list_id === 5) {
         addToOtherList(item.item_name);
       }
@@ -80,23 +92,23 @@ $(document).ready(() => {
 
   $.ajax({
     type: "GET",
-    url: `/api/books`,
+    url: `/api/movies`,
     success: (items) => {
       console.log(items);
       renderItems(items);
     },
   });
 
-  $(document).on("dblclick", "li", function() {
+  $(document).on("dblclick", "li", function () {
     let nameToDelete = $(this).text();
     console.log("delete", nameToDelete);
     $(this).toggleClass("strike").fadeOut("slow");
     $.ajax({
       type: "DELETE",
-      url: `/api/books`,
-      data: { deleteBook: nameToDelete },
+      url: `/api/movies`,
+      data: { delete: nameToDelete },
       success: () => {
-        console.log('Removed book:', nameToDelete);
+        console.log("Removed movie:", nameToDelete);
       },
     });
   });

@@ -1,14 +1,25 @@
+// const omdbTypeFetch = require("../../scripts/api");
 const db = require("../connection");
 
 const insertItem = (input) => {
   const queryString = `
   INSERT INTO items (list_id, item_name)
-  VALUES (1, $1)
+  VALUES ($1, $2)
   RETURNING *
   `;
 
+  let queryParams = [];
+
+  if (input.type === "movie" || input.type === "series") {
+    queryParams = [1, input.name];
+  } else if (input.type === "restaurant") {
+    queryParams = [2, input.name];
+  } else {
+    queryParams = [5, input.name];
+  }
+
   return db
-    .query(queryString, [input])
+    .query(queryString, queryParams)
     .then((result) => {
       return result.rows[0];
     })

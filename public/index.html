@@ -8,16 +8,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!--APP CSS-->
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
-    <link rel="stylesheet" href="/vendor/border-box.css" />
+    <link rel="stylesheet" href="./vendor/normalize-4.1.1.css" />
+    <link rel="stylesheet" href="./vendor/border-box.css" />
+    <link rel="stylesheet" href="./styles/layout.css" />
+    <link rel="stylesheet" href="./styles/navbar.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
     <link rel="stylesheet" href="./styles/section.css" />
-    <link rel="stylesheet" href="/styles/layout.css" />
-    <link rel="stylesheet" href="/styles/navbar.css" />
     <!--External CSS-->
     <link
       href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@1,300;1,600&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/c3b30720d4.js"
+      crossorigin="anonymous"
+    ></script>
     <!--APP JS-->
     <script defer src="./vendor/jquery-3.6.3.js"></script>
     <script defer src="./scripts/app.js"></script>
@@ -68,42 +73,43 @@
             />
             <input type="submit" class="addBtn" />
           </form>
+
+          <div class="popup" id="popup">
+            <i class="fa-sharp fa-solid fa-file-circle-plus"></i>
+            <h2>Please choose category</h2>
+            <button id="closePop">OK</button>
+          </div>
         </div>
       </section>
       <section class="lists">
-        <!-- Books -->
-        <div class="Books-section">
-          <h3 class="Books-top">Books To Read:</h3>
-          <ol class="Books-container">
-          </ol>
+        <!-- Film/Series (to watch) -->
+        <div class="Movies-section">
+          <h3 class="Movies-top">Film/Series To Watch:</h3>
+          <ol class="Movies-container allLists"></ol>
         </div>
 
-        <!-- Movies -->
-        <div class="Movies-section">
-          <h3 class="Movies-top">Movies To See:</h3>
-          <ol class="Movies-container">
-          </ol>
+        <!-- Restaurants/Cafes (to eat) -->
+        <div class="Restaurants-section">
+          <h3 class="Restaurants-top">Places To Eat:</h3>
+          <ol class="Restaurants-container allLists"></ol>
+        </div>
+
+        <!-- Books (to read) -->
+        <div class="Books-section">
+          <h3 class="Books-top">Books To Read:</h3>
+          <ol class="Books-container allLists"></ol>
         </div>
 
         <!-- Products -->
         <div class="Products-section">
           <h3 class="Products-top">Products To Buy:</h3>
-          <ol class="Products-container">
-          </ol>
-        </div>
-
-        <!-- restaurants -->
-        <div class="Restaurants-section">
-          <h3 class="Restaurants-top">Restaurants To Go:</h3>
-          <ol class="Restaurants-container">
-          </ol>
+          <ol class="Products-container allLists"></ol>
         </div>
 
         <!-- Other -->
         <div class="Others-section">
           <h3 class="Others-top">Others:</h3>
-          <ol class="Others-container">
-          </ol>
+          <ol class="Others-container allLists"></ol>
         </div>
       </section>
     </main>
