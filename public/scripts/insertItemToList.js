@@ -102,9 +102,9 @@ $(document).ready(() => {
     $.ajax({
       type: "DELETE",
       url: `/api/movies`,
-      data: { deleteBook: nameToDelete },
+      data: { delete: nameToDelete },
       success: () => {
-        console.log("Removed book:", nameToDelete);
+        console.log("Removed movie:", nameToDelete);
       },
     });
   });
