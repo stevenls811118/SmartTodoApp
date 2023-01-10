@@ -53,7 +53,7 @@ $(document).ready(() => {
     console.log("Submiting");
     $.ajax({
       type: "POST",
-      url: `/api/movies`,
+      url: `/api/items`,
       data: { todo_input: input },
       success: () => {
         $("#myInput").val("");
@@ -61,7 +61,7 @@ $(document).ready(() => {
 
         $.ajax({
           type: "GET",
-          url: `/api/movies`,
+          url: `/api/items`,
           success: (items) => {
             console.log(items);
             renderItems(items);
@@ -92,7 +92,7 @@ $(document).ready(() => {
 
   $.ajax({
     type: "GET",
-    url: `/api/movies`,
+    url: `/api/items`,
     success: (items) => {
       console.log(items);
       renderItems(items);
@@ -105,7 +105,7 @@ $(document).ready(() => {
     $(this).toggleClass("strike").fadeOut("slow");
     $.ajax({
       type: "DELETE",
-      url: `/api/movies`,
+      url: `/api/items`,
       data: { delete: nameToDelete },
       success: () => {
         console.log("Removed movie:", nameToDelete);
