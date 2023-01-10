@@ -10,8 +10,10 @@ const insertItem = (input) => {
 
   let queryParams = [];
 
-  if (input.type === 'movie') {
+  if (input.type === "movie") {
     queryParams = [1, input.name];
+  } else if (input.type === "eat") {
+    queryParams = [2, input.name];
   } else {
     queryParams = [5, input.name];
   }

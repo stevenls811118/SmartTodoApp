@@ -43,7 +43,6 @@ const addToOtherList = (input) => {
   $(".Others-container").append($newItem);
 };
 
-
 $(document).ready(() => {
   const $form = $("#input-form");
   console.log("document ready");
@@ -54,15 +53,14 @@ $(document).ready(() => {
     console.log("Submiting");
     $.ajax({
       type: "POST",
-      url: `/api/books`,
+      url: `/api/movies`,
       data: { todo_input: input },
       success: () => {
-        
-        $('.allLists').empty();
-    
+        $(".allLists").empty();
+
         $.ajax({
           type: "GET",
-          url: `/api/books`,
+          url: `/api/movies`,
           success: (items) => {
             console.log(items);
             renderItems(items);
@@ -90,23 +88,23 @@ $(document).ready(() => {
 
   $.ajax({
     type: "GET",
-    url: `/api/books`,
+    url: `/api/movies`,
     success: (items) => {
       console.log(items);
       renderItems(items);
     },
   });
 
-  $(document).on("dblclick", "li", function() {
+  $(document).on("dblclick", "li", function () {
     let nameToDelete = $(this).text();
     console.log("delete", nameToDelete);
     $(this).toggleClass("strike").fadeOut("slow");
     $.ajax({
       type: "DELETE",
-      url: `/api/books`,
+      url: `/api/movies`,
       data: { deleteBook: nameToDelete },
       success: () => {
-        console.log('Removed book:', nameToDelete);
+        console.log("Removed book:", nameToDelete);
       },
     });
   });
