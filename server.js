@@ -31,13 +31,14 @@ app.use(express.static("public")); //middleware statically serve everything in p
 const userApiRoutes = require("./routes/users-api");
 const widgetApiRoutes = require("./routes/widgets-api");
 
-const loginRoutes = require("./routes/login");
-const logoutRoutes = require("./routes/logout");
-const booksRoutes = require("./routes/movies");
+// const loginRoutes = require("./routes/login");
+// const logoutRoutes = require("./routes/logout");
+const booksRoutes = require("./routes/books");
 const foodRoutes = require("./routes/food");
 const moviesRoutes = require("./routes/movies");
 const productsRoutes = require("./routes/products");
 const otherRoutes = require("./routes/other");
+const itemsRoutes = require("./routes/items");
 // const usersRoutes = require("./routes/users");
 
 // Mount all resource routes
@@ -45,7 +46,9 @@ const otherRoutes = require("./routes/other");
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
 app.use("/api/users", userApiRoutes);
 app.use("/api/widgets", widgetApiRoutes);
-app.use("/api/movies", moviesRoutes);
+// app.use("/api/movies", moviesRoutes);
+app.use("/api/books", booksRoutes);
+app.use("/api/items", itemsRoutes);
 // app.use("/users", usersRoutes);
 // Note: mount other resources here, using the same pattern above
 
