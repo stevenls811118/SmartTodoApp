@@ -56,6 +56,7 @@ $(document).ready(() => {
       url: `/api/movies`,
       data: { todo_input: input },
       success: () => {
+        $('#myInput').val('');
         $(".allLists").empty();
 
         $.ajax({

@@ -25,7 +25,7 @@ VALUES
 (1, 'Strange World'),
 (2, 'McDonalds'),
 (2, 'KFC'),
-(2, 'A&W'),
+(2, 'Starbucks'),
 (2, 'Taco Bell'),
 (3, 'Lord of the Rings'),
 (3, 'Huckleberry Finn'),
