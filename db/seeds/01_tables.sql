@@ -6,50 +6,37 @@ VALUES
 
 INSERT INTO lists (user_id, list_name)
 VALUES
--- (1, "Films/Series (To Watch)"),
--- (1, "Restaurants/Cafes (To Eat)"),
-(1, 'Books (To Read)');
--- (1, "Products (To Buy)"),
--- (1, "Uncategorized"),
--- (2, "Films/Series (To Watch)"),
--- (2, "Restaurants/Cafes (To Eat)"),
--- (2, "Books (To Read)"),
--- (2, "Products (To Buy)"),
--- (2, "Uncategorized"),
+(1, 'Books (To Read)'),
+(1, 'Movies (To Watch)'),
+(1, 'Products (To Buy)'),
+(1, 'Restaurants/Cafes (To Eat)'),
+(1, 'Others'),
+(2, 'Books (To Read)'),
+(2, 'Movies (To Watch)'),
+(2, 'Products (To Buy)'),
+(2, 'Restaurants/Cafes (To Eat)'),
+(2, 'Others');
 
 INSERT INTO items (list_id, item_name)
 VALUES
 (1, 'Lord of the Rings'),
 (1, 'Huckleberry Finn'),
-(1, 'Harry Potter');
+(1, 'Harry Potter'),
+(1, 'Harry Potter'),
+(2, 'Avatar: The Way of Water'),
+(2, 'Violent Night'),
+(2, 'The Whale'),
+(2, 'Strange World'),
+(3, 'Pen'),
+(3, 'Paper'),
+(3, 'Plastic'),
+(3, 'Pomegranate'),
+(4, 'McDonalds'),
+(4, 'KFC'),
+(4, 'A&W'),
+(4, 'Taco Bell'),
+(5, 'adwiudhauiwdhwiaud'),
+(5, 'eegiojrofij'),
+(5, 'vfoivjodfijvoid'),
+(5, 'eoirejrejc');
 
-
--- INSERT INTO restaurants (user_id, title)
--- VALUES
--- (1, "McDonalds"),
--- (1, "KFC"),
--- (2, "A&W"),
--- (2, "Taco Bell");
-
--- INSERT INTO books (user_id, title)
--- VALUES
--- (1, "Eragon", ),
--- (1, "To Kill a Mockingbird"),
--- (2, "The Great Gatsby"),
--- (2, "Clockwork Orange");
-
--- INSERT INTO products (user_id, title)
--- VALUES
--- (1, "Pen"),
--- (1, "Paper"),
--- (2, "Plastic"),
--- (2, "Pomegranate");
-
--- INSERT INTO no_match (user_id, title)
--- VALUES
--- (1, "adwiudhauiwdhwiaud"),
--- (1, "eegiojrofij"),
--- (2, "vfoivjodfijvoid"),
--- (2, "eoirejrejc");
-
--- INSERT INTO film_series (title) VALUES ('Kira');
