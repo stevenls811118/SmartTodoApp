@@ -48,7 +48,7 @@ $(document).ready(() => {
   console.log("document ready");
   $form.on("submit", function (event) {
     let input = $("#myInput").val();
-
+    $(".popup").css("display", "block");
     event.preventDefault();
     console.log("Submiting");
     $.ajax({
@@ -56,7 +56,7 @@ $(document).ready(() => {
       url: `/api/movies`,
       data: { todo_input: input },
       success: () => {
-        $('#myInput').val('');
+        $("#myInput").val("");
         $(".allLists").empty();
 
         $.ajax({
@@ -68,6 +68,9 @@ $(document).ready(() => {
           },
         });
       },
+    });
+    $("#closePop").on("click", () => {
+      $(".popup").css("display", "none");
     });
   });
 
