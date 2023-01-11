@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { insertItem, getItems, deleteItem } = require("../db/queries/smart.js");
+// const apiFetch = require("../scripts/api");
 const gBooksDetails = require("../scripts/books-api.js");
 
 router.post("/", (req, res) => {
