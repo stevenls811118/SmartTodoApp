@@ -11,11 +11,19 @@ const gBooksDetails = async(input) => {
     
     // async promise for Google books API 
     const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${gBooksString}`);
-    console.log(response.data);
+    // console.log(response.data);
+    console.log(`book has been found!`);
+
+    return response.data.kind;
+
+    // .then(res => {
+    //   const bookInfo = res.data.items
+    // })
 
     // catch error message
   } catch (error) {
     console.log(error.response.body);
+    console.log(`book has not been found!`);
   }
 };
 
