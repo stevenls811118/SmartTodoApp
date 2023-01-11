@@ -26,3 +26,6 @@ axios.get('https://api.rainforestapi.com/request', { params })
 // catch and print the error
 console.log(error);
 })
+
+module.exports = productDetails;
+
