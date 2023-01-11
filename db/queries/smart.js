@@ -14,6 +14,8 @@ const insertItem = (input) => {
     queryParams = [1, input.name];
   } else if (input.type === "restaurant") {
     queryParams = [2, input.name];
+  } else if (input.type === "book") {
+    queryParams = [3, input.name];
   } else {
     queryParams = [5, input.name];
   }

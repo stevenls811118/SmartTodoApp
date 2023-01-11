@@ -43,18 +43,28 @@ const addToOtherList = (input) => {
   $(".Others-container").append($newItem);
 };
 
+const title = (input) => {
+  let array = input.split(" ");
+  for (let i = 0; i < array.length; i++) {
+    array[i] = array[i][0].toUpperCase() + array[i].slice(1, array[i].length);
+  }
+  let result = array.join(' ');
+  return result;
+};
+
 $(document).ready(() => {
   const $form = $("#input-form");
   console.log("document ready");
-  $form.on("submit", function (event) {
-    let input = $("#myInput").val();
-    $(".popup").css("display", "block");
+  $form.on("submit", function(event) {
+    let input = title($("#myInput").val());
+    console.log(input);
+    // $(".popup").css("display", "block");
     event.preventDefault();
     console.log("Submiting");
     $.ajax({
       type: "POST",
       url: `/api/items`,
-      data: { todo_input: input },
+      data: { todoInput: input },
       success: () => {
         $("#myInput").val("");
         $(".allLists").empty();
@@ -63,15 +73,14 @@ $(document).ready(() => {
           type: "GET",
           url: `/api/items`,
           success: (items) => {
-            console.log(items);
             renderItems(items);
           },
         });
       },
     });
-    $("#closePop").on("click", () => {
-      $(".popup").css("display", "none");
-    });
+    // $("#closePop").on("click", () => {
+    //   $(".popup").css("display", "none");
+    // });
   });
 
   const renderItems = (items) => {
@@ -94,7 +103,6 @@ $(document).ready(() => {
     type: "GET",
     url: `/api/items`,
     success: (items) => {
-      console.log(items);
       renderItems(items);
     },
   });
@@ -108,7 +116,7 @@ $(document).ready(() => {
       url: `/api/items`,
       data: { delete: nameToDelete },
       success: () => {
-        console.log("Removed movie:", nameToDelete);
+        
       },
     });
   });

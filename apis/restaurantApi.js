@@ -15,7 +15,7 @@ const yelpFetch = async(input) => {
     };
 
     const resYelp = await axios.request(options);
-    console.log('Yelp data: ', resYelp.data);
+    console.log('Yelp data.total: ', resYelp.data.total);
     return resYelp.data;
   } catch (error) {
     console.log(error.response.body);

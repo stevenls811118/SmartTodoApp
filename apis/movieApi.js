@@ -7,7 +7,7 @@ const omdbFetch = async(input) => {
  
     const resOMDB = await axios.get(`https://www.omdbapi.com/?t=${OMDBstring}&apikey=7bcf905d`);
       
-    console.log('OMDB data: ', resOMDB.data);
+    console.log('OMDB data.Type: ', resOMDB.data.Type);
     return resOMDB.data;
   } catch (error) {
     console.log(error.response.body);
