@@ -1,11 +1,14 @@
 const express = require("express");
 const router = express.Router();
 const { insertItem, getItems, deleteItem } = require("../db/queries/smart.js");
-const apiFetch = require("../scripts/api");
+const omdbFetch = require("../apis/movieApi");
+const yelpFetch = require("../apis/restaurantApi.js");
 
 router.post("/", (req, res) => {
   console.log("req.body: ", req.body);
-  apiFetch(req.body.todo_input)
+  let keyword = req.body.todo_input;
+
+  Promise.all([omdbFetch(keyword), yelpFetch(keyword)])
     .then((result) => {
 
       // console.log("OMDB result is: ", result[0].Title, result[0].Type);
