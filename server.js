@@ -26,31 +26,17 @@ app.use(
 );
 app.use(express.static("public")); //middleware statically serve everything in public folder
 
-// Separated Routes for each Resource
-// Note: Feel free to replace the example routes below with your own
+
+// API routes
 const userApiRoutes = require("./routes/users-api");
 const widgetApiRoutes = require("./routes/widgets-api");
-
-// const loginRoutes = require("./routes/login");
-// const logoutRoutes = require("./routes/logout");
-const booksRoutes = require("./routes/books");
-const foodRoutes = require("./routes/food");
-const moviesRoutes = require("./routes/movies");
-const productsRoutes = require("./routes/products");
-const otherRoutes = require("./routes/other");
 const itemsRoutes = require("./routes/items");
-// const usersRoutes = require("./routes/users");
 
-// Mount all resource routes
-// Note: Feel free to replace the example routes below with your own
-// Note: Endpoints that return data (eg. JSON) usually start with `/api`
+// API Endpoints
 app.use("/api/users", userApiRoutes);
 app.use("/api/widgets", widgetApiRoutes);
-// app.use("/api/movies", moviesRoutes);
-app.use("/api/books", booksRoutes);
 app.use("/api/items", itemsRoutes);
-// app.use("/users", usersRoutes);
-// Note: mount other resources here, using the same pattern above
+
 
 // Home page
 // Warning: avoid creating more routes in this file!
