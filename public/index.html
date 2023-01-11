@@ -19,6 +19,10 @@
       href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@1,300;1,600&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@1,300;1,600&display=swap"
+      rel="stylesheet"
+    />
     <script
       src="https://kit.fontawesome.com/c3b30720d4.js"
       crossorigin="anonymous"
@@ -72,13 +76,16 @@
               required
             />
             <input type="submit" class="addBtn" />
+            <div class="duplicateMessage">
+              <h2>Choose a category</h2>
+              <div id="duplicate">
+                <i id="movieButton" class="fa-solid fa-video"></i>
+                <i id="restaurantButton" class="fa-solid fa-utensils"></i>
+                <i id="bookButton" class="fa-solid fa-book"></i>
+                <i id="shoppingButton" class="fa-solid fa-cart-shopping"></i>
+              </div>
+            </div>
           </form>
-
-          <div class="popup" id="popup">
-            <i class="fa-sharp fa-solid fa-file-circle-plus"></i>
-            <h2>Please choose category</h2>
-            <button id="closePop">OK</button>
-          </div>
         </div>
       </section>
       <section class="lists">

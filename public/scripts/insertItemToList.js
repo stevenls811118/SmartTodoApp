@@ -48,17 +48,22 @@ const title = (input) => {
   for (let i = 0; i < array.length; i++) {
     array[i] = array[i][0].toUpperCase() + array[i].slice(1, array[i].length);
   }
-  let result = array.join(' ');
+  let result = array.join(" ");
   return result;
 };
 
 $(document).ready(() => {
+  // PESUDO CODE
+  // $bookButton = false;
+  // $movieButton = false;
+  // $restaurantButton = false;
+
   const $form = $("#input-form");
   console.log("document ready");
-  $form.on("submit", function(event) {
+  $form.on("submit", function (event) {
     let input = title($("#myInput").val());
     console.log(input);
-    // $(".popup").css("display", "block");
+
     event.preventDefault();
     console.log("Submiting");
     $.ajax({
@@ -77,10 +82,26 @@ $(document).ready(() => {
           },
         });
       },
+      error: (err) => {
+        const response = err.responseJSON?.category;
+        // PSUEDO COD
+        $(".duplicateMessage h2").slideDown();
+        for (const obj of response) {
+          if (obj === "book") {
+            $("#bookButton").slideDown("slow");
+          }
+          if (obj === "movie") {
+            $("#movieButton").slideDown("slow");
+          }
+          if (obj === "restaurant") {
+            $("#restaurantButton").slideDown("slow");
+          } else {
+            $("#bookButton", "movieButton", "restaurantButton").hide();
+          }
+        }
+        console.log("++++++++++++", err);
+      },
     });
-    // $("#closePop").on("click", () => {
-    //   $(".popup").css("display", "none");
-    // });
   });
 
   const renderItems = (items) => {
@@ -115,9 +136,7 @@ $(document).ready(() => {
       type: "DELETE",
       url: `/api/items`,
       data: { delete: nameToDelete },
-      success: () => {
-        
-      },
+      success: () => {},
     });
   });
 });
