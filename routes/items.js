@@ -3,7 +3,7 @@ const router = express.Router();
 const { insertItem, getItems, deleteItem } = require("../db/queries/smart.js");
 // const apiFetch = require("../scripts/api");
 const gBooksDetails = require("../scripts/books-api.js");
-const productDetails = require("../scripts/products_api")
+// const productDetails = require("../scripts/products_api")
 
 router.post("/", (req, res) => {
   console.log("req.body: ", req.body);
