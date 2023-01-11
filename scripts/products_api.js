@@ -14,7 +14,7 @@ const productDetails = async(input) => {
   console.log(productString);
   const urlRequest = ('https://api.rainforestapi.com/request');
   console.log(urlRequest);
-}
+
 // make the http GET request to Rainforest API
 axios.get('https://api.rainforestapi.com/request', { params })
 .then(response => {
@@ -25,7 +25,8 @@ axios.get('https://api.rainforestapi.com/request', { params })
   }).catch(error => {
 // catch and print the error
 console.log(error);
-})
+  })
+}
 
 module.exports = productDetails;
 
