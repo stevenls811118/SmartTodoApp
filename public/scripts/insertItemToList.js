@@ -108,6 +108,7 @@ $(document).ready(() => {
           let inputType = $(this).text().toLowerCase().trim();
           console.log("type is: ", inputType);
           $(".fa-solid").hide();
+          $("#myInput").val("");
           console.log(name);
           $.ajax({
             type: "POST",
