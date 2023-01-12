@@ -27,16 +27,18 @@
       src="https://kit.fontawesome.com/c3b30720d4.js"
       crossorigin="anonymous"
     ></script>
+
+    <!--External JS-->
+    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <!--APP JS-->
     <script defer src="./vendor/jquery-3.6.3.js"></script>
     <script defer src="./scripts/app.js"></script>
     <script defer src="./scripts/drag&drop.js"></script>
     <script defer src="./scripts/insertItemToList.js"></script>
     <!-- <script defer src="/database.js"></script> -->
-
-    <!--External JS-->
-    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
   </head>
 
   <body>
@@ -79,9 +81,13 @@
             <div class="duplicateMessage">
               <div id="duplicate">
                 <i id="movieButton" class="fa-solid fa-video"> Movie</i>
-                <i id="restaurantButton" class="fa-solid fa-utensils"> Restaurant</i>
+                <i id="restaurantButton" class="fa-solid fa-utensils">
+                  Restaurant</i
+                >
                 <i id="bookButton" class="fa-solid fa-book"> Book</i>
-                <i id="shoppingButton" class="fa-solid fa-cart-shopping"> Product</i>
+                <i id="shoppingButton" class="fa-solid fa-cart-shopping">
+                  Product</i
+                >
               </div>
             </div>
           </form>

@@ -66,4 +66,22 @@ const deleteItem = (name) => {
     });
 };
 
-module.exports = { insertItem, getItems, deleteItem };
+const editItem = (name, id) => {
+  const queryString = `
+  UPDATE items
+  SET item_name = $1
+  WHERE id = $2
+  `;
+
+  return db
+    .query(queryString, [name, id])
+    .then((result) => {
+      return result.rows;
+    })
+    .catch((e) => {
+      console.log(e);
+      return e;
+    });
+};
+
+module.exports = { insertItem, getItems, deleteItem, editItem };

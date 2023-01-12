@@ -1,43 +1,43 @@
-const addToBookList = (input) => {
+const addToBookList = (input, id) => {
   const $newItem = $(`
     <li class="listitems">
-      <div class="text" id="">${input}</div>
+      <div class="text">${input}</div><i id="${id}" class="edit-icon fa-solid fa-pencil fa-xs"></i>
     </li>
   `);
   $(".Books-container").append($newItem);
 };
 
-const addToMovieList = (input) => {
+const addToMovieList = (input, id) => {
   const $newItem = $(`
     <li class="listitems">
-      <div class="text" id="">${input}</div>
+      <div class="text" >${input}</div><i id="${id}" class="edit-icon fa-solid fa-pencil fa-xs"></i>
     </li>
   `);
   $(".Movies-container").append($newItem);
 };
 
-const addToProductList = (input) => {
+const addToProductList = (input, id) => {
   const $newItem = $(`
     <li class="listitems">
-      <div class="text" id="">${input}</div>
+      <div class="text" id="">${input}</div><i id="${id}" class="edit-icon fa-solid fa-pencil fa-xs"></i>
     </li>
   `);
   $(".Products-container").append($newItem);
 };
 
-const addToRestaurantList = (input) => {
+const addToRestaurantList = (input, id) => {
   const $newItem = $(`
     <li class="listitems">
-      <div class="text" id="">${input}</div>
+      <div class="text" id="">${input}</div><i id="${id}" class="edit-icon fa-solid fa-pencil fa-xs"></i>
     </li>
   `);
   $(".Restaurants-container").append($newItem);
 };
 
-const addToOtherList = (input) => {
+const addToOtherList = (input, id) => {
   const $newItem = $(`
     <li class="listitems">
-      <div class="text" id="">${input}</div>
+      <div class="text">${input}</div><i id="${id}" class="fa-solid fa-pencil fa-xs"></i>
     </li>
   `);
   $(".Others-container").append($newItem);
@@ -53,11 +53,6 @@ const title = (input) => {
 };
 
 $(document).ready(() => {
-  // PESUDO CODE
-  // $bookButton = false;
-  // $movieButton = false;
-  // $restaurantButton = false;
-
   const $form = $("#input-form");
   console.log("document ready");
   $form.on("submit", function (event) {
@@ -104,7 +99,6 @@ $(document).ready(() => {
           }
         }
         $(document).on("click", "i", function () {
-          
           let inputType = $(this).text().toLowerCase().trim();
           console.log("type is: ", inputType);
           $(".fa-solid").hide();
@@ -113,7 +107,7 @@ $(document).ready(() => {
           $.ajax({
             type: "POST",
             url: `/api/items`,
-            data: { name: name, type: inputType, finalResult: true},
+            data: { name: name, type: inputType, finalResult: true },
             success: () => {
               $(".allLists").empty();
 
@@ -134,27 +128,50 @@ $(document).ready(() => {
   const renderItems = (items) => {
     for (let item of items) {
       if (item.list_id === 1) {
-        addToMovieList(item.item_name);
+        addToMovieList(item.item_name, item.id);
       } else if (item.list_id === 2) {
-        addToRestaurantList(item.item_name);
+        addToRestaurantList(item.item_name, item.id);
       } else if (item.list_id === 3) {
-        addToBookList(item.item_name);
+        addToBookList(item.item_name, item.id);
       } else if (item.list_id === 4) {
-        addToProductList(item.item_name);
+        addToProductList(item.item_name, item.id);
       } else if (item.list_id === 5) {
-        addToOtherList(item.item_name);
+        addToOtherList(item.item_name, item.id);
       }
     }
   };
+  const loadItems = () =>
+    $.ajax({
+      type: "GET",
+      url: `/api/items`,
+      success: (items) => {
+        renderItems(items);
+      },
+    });
 
-  $.ajax({
-    type: "GET",
-    url: `/api/items`,
-    success: (items) => {
-      renderItems(items);
-    },
+  $(document).on("click", ".edit-icon", function () {
+    let nameToEdit = $(this).text();
+    let id = $(this).attr("id");
+
+    swal({
+      text: "Do you want to change the name?",
+      content: "input",
+      button: {
+        text: "Edit!",
+      },
+    }).then((nameToEdit) => {
+      $.ajax({
+        type: "PUT",
+        url: `/api/items`,
+        data: { edit: nameToEdit, id },
+        success: () => {
+          loadItems();
+        },
+      });
+    });
   });
 
+  /////////////// Delete feature ///////////////
   $(document).on("dblclick", "li", function () {
     let nameToDelete = $(this).text();
     console.log("delete", nameToDelete);
@@ -166,4 +183,5 @@ $(document).ready(() => {
       success: () => {},
     });
   });
+  loadItems();
 });

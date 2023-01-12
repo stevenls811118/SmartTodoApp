@@ -1,6 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const { insertItem, getItems, deleteItem } = require("../db/queries/smart.js");
+const {
+  insertItem,
+  getItems,
+  deleteItem,
+  editItem,
+} = require("../db/queries/smart.js");
 const omdbFetch = require("../apis/movieApi");
 const yelpFetch = require("../apis/restaurantApi.js");
 const gBooksDetails = require("../apis/books-api.js");
@@ -9,7 +14,11 @@ router.post("/", (req, res) => {
   console.log("req.body: ", req.body.finalResult);
   let keyword = req.body.name;
   if (req.body.finalResult === undefined) {
-    Promise.all([omdbFetch(keyword), yelpFetch(keyword), gBooksDetails(keyword)])
+    Promise.all([
+      omdbFetch(keyword),
+      yelpFetch(keyword),
+      gBooksDetails(keyword),
+    ])
       .then((result) => {
         // console.log("OMDB result is: ", result[0].Title, result[0].Type);
         let category = [];
@@ -51,7 +60,6 @@ router.post("/", (req, res) => {
           res.status(200).send("Ok!");
         });
       });
-
   } else if (req.body.finalResult) {
     let finalObj = { name: req.body.name, type: req.body.type };
     console.log("final step: ", finalObj);
@@ -65,6 +73,14 @@ router.post("/", (req, res) => {
 router.get("/", (req, res) => {
   getItems().then((items) => {
     // console.log(items);
+    res.json(items);
+  });
+});
+
+router.put("/", (req, res) => {
+  console.log("req.body: ", req.body.edit);
+  editItem(req.body.edit, req.body.id).then((items) => {
+    console.log(items);
     res.json(items);
   });
 });
