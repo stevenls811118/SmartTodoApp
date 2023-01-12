@@ -2,6 +2,7 @@
 const db = require("../connection");
 
 const insertItem = (input) => {
+  console.log(input.name, input.type);
   const queryString = `
   INSERT INTO items (list_id, item_name)
   VALUES ($1, $2)

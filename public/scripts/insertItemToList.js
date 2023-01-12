@@ -61,15 +61,16 @@ $(document).ready(() => {
   const $form = $("#input-form");
   console.log("document ready");
   $form.on("submit", function (event) {
+    $(".duplicateMessage h2").hide();
+    $(".fa-solid").hide();
     let input = title($("#myInput").val());
     console.log(input);
-
     event.preventDefault();
     console.log("Submiting");
     $.ajax({
       type: "POST",
       url: `/api/items`,
-      data: { todoInput: input },
+      data: { name: input },
       success: () => {
         $("#myInput").val("");
         $(".allLists").empty();
@@ -83,23 +84,48 @@ $(document).ready(() => {
         });
       },
       error: (err) => {
-        const response = err.responseJSON?.category;
+        const category = err.responseJSON?.category;
+        const name = err.responseJSON?.name;
+        console.log(category, name);
         // PSUEDO COD
-        $(".duplicateMessage h2").slideDown();
-        for (const obj of response) {
+        $(".duplicateMessage h2").show();
+        $(".fa-solid").hide();
+        for (const obj of category) {
           if (obj === "book") {
-            $("#bookButton").slideDown("slow");
+            $("#bookButton").show("fast");
           }
           if (obj === "movie") {
-            $("#movieButton").slideDown("slow");
+            $("#movieButton").show("fast");
           }
           if (obj === "restaurant") {
-            $("#restaurantButton").slideDown("slow");
+            $("#restaurantButton").show("fast");
           } else {
             $("#bookButton", "movieButton", "restaurantButton").hide();
           }
         }
-        console.log("++++++++++++", err);
+        $(document).on("click", "i", function () {
+          
+          let inputType = $(this).text().toLowerCase().trim();
+          console.log("type is: ", inputType);
+          $(".fa-solid").hide();
+          console.log(name);
+          $.ajax({
+            type: "POST",
+            url: `/api/items`,
+            data: { name: name, type: inputType, finalResult: true},
+            success: () => {
+              $(".allLists").empty();
+
+              $.ajax({
+                type: "GET",
+                url: `/api/items`,
+                success: (items) => {
+                  renderItems(items);
+                },
+              });
+            },
+          });
+        });
       },
     });
   });

@@ -22,5 +22,5 @@ const yelpFetch = async(input) => {
   }
 };
 
-// yelpFetch('a&w');
+// yelpFetch('A Man Called Otto');
 module.exports = yelpFetch;
