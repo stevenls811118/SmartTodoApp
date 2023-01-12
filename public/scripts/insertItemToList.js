@@ -126,6 +126,10 @@ $(document).ready(() => {
   });
 
   const renderItems = (items) => {
+    $(
+      ".Books-container, .Movies-container, .Restaurants-container, .Others-container, .Products-container"
+    ).empty();
+
     for (let item of items) {
       if (item.list_id === 1) {
         addToMovieList(item.item_name, item.id);
