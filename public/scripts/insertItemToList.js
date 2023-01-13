@@ -56,7 +56,6 @@ $(document).ready(() => {
   const $form = $("#input-form");
   console.log("document ready");
   $form.on("submit", function (event) {
-  
     $(".fa-solid").hide();
     let input = title($("#myInput").val());
     console.log(input);
@@ -95,13 +94,17 @@ $(document).ready(() => {
           }
           if (obj === "product") {
             $("#shoppingButton").show("fast");
-          } 
-          else {
-            $("movieButton", "restaurantButton", "#bookButton", "#shoppingButton").hide();
+          } else {
+            $(
+              "movieButton",
+              "restaurantButton",
+              "#bookButton",
+              "#shoppingButton"
+            ).hide();
           }
         }
-      }
-    })
+      },
+    });
   });
 
   $(document).on("click", ".category", function () {
@@ -110,9 +113,9 @@ $(document).ready(() => {
     $(".fa-solid").hide();
     let name = $("#myInput").val();
     console.log("name is: ", name);
-    let data = { name: name, type: inputType, finalResult: true}
+    let data = { name: name, type: inputType, finalResult: true };
     console.log("data is: ", data);
-    $("#myInput").val('');
+    $("#myInput").val("");
     $.ajax({
       type: "POST",
       url: `/api/items`,
@@ -126,9 +129,9 @@ $(document).ready(() => {
             return renderItems(items);
           },
         });
-      }
+      },
     });
-  })
+  });
 
   const renderItems = (items) => {
     $(
@@ -196,9 +199,7 @@ $(document).ready(() => {
       type: "DELETE",
       url: `/api/items`,
       data: { delete: nameToDelete },
-      success: () => {
-               
-      },
+      success: () => {},
     });
   });
-})
+});
