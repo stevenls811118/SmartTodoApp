@@ -1,31 +1,37 @@
-// const axios = require('axios');
+const axios = require('axios');
+const SerpApi = require('google-search-results-nodejs');
+const search = new SerpApi.GoogleSearch("95b37135ebe388a0274960f4e2d2055aa8ef471b0c9ecd3d468f11386212b91e");
 
-// // set up the request parameters
-// const params = {
-//   api_key: "B7449ED21AF0487C8BF644C4163A80BF",
-//   amazon_domain: "amazon.ca",
-//   asin: "B073JYC4XM",
-//   type: "product"
-// };
+const params = {
+  engine: "walmart",
+  query: ``,
+  api_key: "1bbfd2432a4089c49efd374ba9c0f6371f681bc378cac02934a60ad1dcd28dfe",
+};
+// set up the request parameters
+const productDetails = async(input) => {
 
-// const productDetails = async(input) => {
-//   console.log("looking for products");
-//   const productString = input.replace(/ /g, '+').replace(/&/g, '%26');
-//   console.log(productString);
-//   const urlRequest = ('https://api.rainforestapi.com/request');
-//   console.log(urlRequest);
-//   axios.get('https://api.rainforestapi.com/request', { params })
-//     .then(response => {
-//       console.log(response);
-//       // print the JSON response from Rainforest API
-//       console.log(JSON.stringify(response.data, 0, 2));
-//     })
-//     .catch(error => {
-//     // catch and print the error
-//       console.log(error);
-//     });
-// };
-// // make the http GET request to Rainforest API
-// productDetails('pencil');
-// module.exports = productDetails;
+const productString = input.replace(/ /g, '+').replace(/&/g, '%26')
+const urlRequest = (`https://serpapi.com/search.json?engine=walmart&query=${productString}`);
 
+
+
+  try {
+  //set up console.logs for debugging
+  console.log("looking for products");;
+  console.log(productString);
+  console.log(urlRequest);
+
+  const resSerpApi = await axios.get(`https://serpapi.com/search.json?engine=walmart&query=${productString}`)
+  console.log(response.data);
+  console.log(`found the product`)
+  return resSerpApi.data;
+}
+ catch (error) {
+// catch and print the error
+console.log(error);
+  };
+
+}
+// Show result as JSON
+search.json(params, productDetails);
+module.exports = productDetails;

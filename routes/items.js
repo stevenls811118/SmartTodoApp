@@ -9,6 +9,7 @@ const {
 const omdbFetch = require("../apis/movieApi");
 const yelpFetch = require("../apis/restaurantApi.js");
 const gBooksDetails = require("../apis/books-api.js");
+const productDetails = require("../apis/products_api")
 
 router.post("/", (req, res) => {
   console.log("req.body: ", req.body.finalResult);
@@ -18,6 +19,7 @@ router.post("/", (req, res) => {
       omdbFetch(keyword),
       yelpFetch(keyword),
       gBooksDetails(keyword),
+      productDetails(keyword),
     ])
       .then((result) => {
         // console.log("OMDB result is: ", result[0].Title, result[0].Type);
