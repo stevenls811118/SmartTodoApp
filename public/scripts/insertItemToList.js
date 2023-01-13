@@ -37,7 +37,7 @@ const addToRestaurantList = (input, id) => {
 const addToOtherList = (input, id) => {
   const $newItem = $(`
     <li class="listitems">
-      <div class="text">${input}</div><i id="${id}" class="fa-solid fa-pencil fa-xs"></i>
+      <div class="text">${input}</div><i id="${id}" class="edit-icon fa-solid fa-pencil fa-xs"></i>
     </li>
   `);
   $(".Others-container").append($newItem);
@@ -162,16 +162,20 @@ $(document).ready(() => {
       content: "input",
       button: {
         text: "Edit!",
+        // cancel: "Cancel",
       },
-    }).then((nameToEdit) => {
-      $.ajax({
-        type: "PUT",
-        url: `/api/items`,
-        data: { edit: nameToEdit, id },
-        success: () => {
-          loadItems();
-        },
-      });
+    }).then((inputValue) => {
+      console.log(inputValue);
+      if (inputValue !== "" && inputValue !== null) {
+        $.ajax({
+          type: "PUT",
+          url: `/api/items`,
+          data: { edit: inputValue, id },
+          success: () => {
+            loadItems();
+          },
+        });
+      }
     });
   });
 
