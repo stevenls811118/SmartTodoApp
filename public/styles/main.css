@@ -23,12 +23,3 @@ footer {
   color: white;
   text-align: center;
 }
-
-.lists {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: flex-start;
-  width: 100vw;
-  max-height: 50vh;
-}

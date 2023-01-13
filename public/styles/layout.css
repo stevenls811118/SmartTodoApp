@@ -1,4 +1,8 @@
-body,
-html {
-  margin: 0;
+.lists {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 100vw;
+  max-height: 50vh;
 }
