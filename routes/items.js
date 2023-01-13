@@ -4,30 +4,38 @@ const { insertItem, getItems, deleteItem } = require("../db/queries/smart.js");
 const omdbFetch = require("../apis/movieApi");
 const yelpFetch = require("../apis/restaurantApi.js");
 const gBooksDetails = require("../apis/books-api.js");
+const SerpApiFetch = require("../apis/products_api.js");
 
 router.post("/", (req, res) => {
-  console.log("req.body: ", req.body.finalResult);
+  console.log("req.body: ", req.body);
   let keyword = req.body.name;
   if (req.body.finalResult === undefined) {
-    Promise.all([omdbFetch(keyword), yelpFetch(keyword), gBooksDetails(keyword)])
+    Promise.all([omdbFetch(keyword), yelpFetch(keyword), gBooksDetails(keyword), SerpApiFetch(keyword)])
       .then((result) => {
         // console.log("OMDB result is: ", result[0].Title, result[0].Type);
         let category = [];
         let yelpType = undefined;
         let googleBookType = undefined;
+        let serpApiType = undefined;
         let input = { name: undefined, type: undefined };
 
         if (result[0].Type !== undefined) {
           category.push(result[0].Type);
         }
+        
         if (result[1].total !== 0) {
           yelpType = "restaurant";
           category.push(yelpType);
         }
-        console.log(result[2]);
+
         if (result[2] !== 0) {
           googleBookType = "book";
           category.push(googleBookType);
+        }
+        
+        if (result[3] === undefined) {
+          serpApiType = "product";
+          category.push(serpApiType);
         }
 
         input = { category, name: req.body.name, type: category[0] };

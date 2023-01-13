@@ -1,4 +1,4 @@
-let dragBox = document.querySelector(".Movies-container");
+let dragBox = document.querySelector(".allLists");
 new Sortable(dragBox, {
   animation: 400,
 });
