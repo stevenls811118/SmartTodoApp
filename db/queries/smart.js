@@ -17,6 +17,8 @@ const insertItem = (input) => {
     queryParams = [2, input.name];
   } else if (input.type === "book") {
     queryParams = [3, input.name];
+  } else if (input.type === "product") {
+    queryParams = [4, input.name];
   } else {
     queryParams = [5, input.name];
   }

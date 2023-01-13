@@ -56,7 +56,7 @@ $(document).ready(() => {
   const $form = $("#input-form");
   console.log("document ready");
   $form.on("submit", function (event) {
-    $(".duplicateMessage h2").hide();
+  
     $(".fa-solid").hide();
     let input = title($("#myInput").val());
     console.log(input);
@@ -80,50 +80,55 @@ $(document).ready(() => {
       },
       error: (err) => {
         const category = err.responseJSON?.category;
-        const name = err.responseJSON?.name;
-        console.log(category, name);
+        console.log(category);
         // PSUEDO COD
-        $(".duplicateMessage h2").show();
         $(".fa-solid").hide();
         for (const obj of category) {
-          if (obj === "book") {
-            $("#bookButton").show("fast");
-          }
           if (obj === "movie") {
             $("#movieButton").show("fast");
           }
           if (obj === "restaurant") {
             $("#restaurantButton").show("fast");
-          } else {
-            $("#bookButton", "movieButton", "restaurantButton").hide();
+          }
+          if (obj === "book") {
+            $("#bookButton").show("fast");
+          }
+          if (obj === "product") {
+            $("#shoppingButton").show("fast");
+          } 
+          else {
+            $("movieButton", "restaurantButton", "#bookButton", "#shoppingButton").hide();
           }
         }
-        $(document).on("click", "i", function () {
-          let inputType = $(this).text().toLowerCase().trim();
-          console.log("type is: ", inputType);
-          $(".fa-solid").hide();
-          $("#myInput").val("");
-          console.log(name);
-          $.ajax({
-            type: "POST",
-            url: `/api/items`,
-            data: { name: name, type: inputType, finalResult: true },
-            success: () => {
-              $(".allLists").empty();
-
-              $.ajax({
-                type: "GET",
-                url: `/api/items`,
-                success: (items) => {
-                  renderItems(items);
-                },
-              });
-            },
-          });
-        });
-      },
-    });
+      }
+    })
   });
+
+  $(document).on("click", "i", function () {
+    inputType = $(this).text().toLowerCase().trim();
+    console.log("type is: ", inputType);
+    $(".fa-solid").hide();
+    let name = $("#myInput").val();
+    console.log("name is: ", name);
+    let data = { name: name, type: inputType, finalResult: true}
+    console.log("data is: ", data);
+    $("#myInput").val('');
+    $.ajax({
+      type: "POST",
+      url: `/api/items`,
+      data: data,
+      success: () => {
+        $.ajax({
+          type: "GET",
+          url: `/api/items`,
+          success: (items) => {
+            $(".allLists").empty();
+            return renderItems(items);
+          },
+        });
+      }
+    });
+  })
 
   const renderItems = (items) => {
     $(
@@ -188,8 +193,9 @@ $(document).ready(() => {
       type: "DELETE",
       url: `/api/items`,
       data: { delete: nameToDelete },
-      success: () => {},
+      success: () => {
+               
+      },
     });
   });
-  loadItems();
-});
+})
