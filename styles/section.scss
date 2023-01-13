@@ -47,7 +47,7 @@ font-family: 'Source Sans Pro', sans-serif;
   padding: 10px;
 }
 
-.Books-container .listitems{
+.Books-container .list-items{
   display: flex;
   width: 100%;
   background: rgb(2,0,36);
@@ -59,11 +59,11 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(237,195,30,1) 0%, rgb
   cursor: pointer;
 }
 
-.Books-container .listitems:hover {
+.Books-container .list-items:hover {
   background:cadetblue;
 }
 
-.Books-container .listitems .text {
+.Books-container .list-items .text {
   font-size: 14px;
   font-weight: bold;
   word-break: break-all;
@@ -95,7 +95,8 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(237,195,30,1) 0%, rgb
 
 .text-input .todo-title {
   font-style: italic;
-  text-align: center
+  text-align: center;
+  padding-bottom: 10px;
 }
 
 input {
@@ -145,7 +146,7 @@ input {
   padding: 10px;
 }
 
-.Movies-container .listitems{
+.Movies-container .list-items{
   display: flex;
   width: 100%;
   // background: #a3d0db;
@@ -159,11 +160,11 @@ input {
   cursor: pointer;
 }
 
-.Movies-container .listitems:hover {
+.Movies-container .list-items:hover {
   background:cadetblue;
 }
 
-.Movies-container .listitems .text {
+.Movies-container .list-items .text {
   font-size: 14px;
   font-weight: bold;
   word-break: break-all;
@@ -193,7 +194,7 @@ input {
   padding: 10px;
 }
 
-.Products-container .listitems{
+.Products-container .list-items{
   display: flex;
   width: 100%;
   background: rgb(2,0,36);
@@ -205,11 +206,11 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(237,195,30,1) 0%, rgb
   cursor: pointer;
 }
 
-.Products-container .listitems:hover {
+.Products-container .list-items:hover {
   background:cadetblue;
 }
 
-.Products-container .listitems .text {
+.Products-container .list-items .text {
   font-size: 14px;
   font-weight: bold;
   word-break: break-all;
@@ -240,7 +241,7 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(237,195,30,1) 0%, rgb
   padding: 10px;
 }
 
-.Restaurants-container .listitems{
+.Restaurants-container .list-items{
   display: flex;
   width: 100%;
   background: rgb(2,0,36);
@@ -252,11 +253,11 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(237,195,30,1) 0%, rgb
   cursor: pointer;
 }
 
-.Restaurants-container .listitems:hover {
+.Restaurants-container .list-items:hover {
   background:cadetblue;
 }
 
-.Restaurants-container .listitems .text {
+.Restaurants-container .list-items .text {
   font-size: 14px;
   font-weight: bold;
 }
@@ -277,18 +278,16 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(237,195,30,1) 0%, rgb
 
 .Others-container {
   width: 100%;
-  background-color: black;
   text-align: center;
   max-width: 240px;
   border-radius: 10px;
   padding: 10px;
 }
 
-.Others-container .listitems{
+.Others-container .list-items{
   display: flex;
   width: 100%;
-  background: #a3d0db;
-  background: linear-gradient(227deg, #a3d0db 0%, #a3b0db 20%, #a3addb 34%, #a3dbd0 59%, #a3d0db 74%, #a3d0db 100%);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(237,195,30,1) 0%, rgba(2,23,19,0.5116421568627452) 100%);
   justify-content: space-between;
   border-radius: 5px;
   margin: 0 0 10px 0;
@@ -296,11 +295,11 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(237,195,30,1) 0%, rgb
   cursor: pointer;
 }
 
-.Others-container .listitems:hover {
+.Others-container .list-items:hover {
   background:cadetblue;
 }
 
-.Others-container .listitems .text {
+.Others-container .list-items .text {
   font-size: 14px;
   font-weight: bold;
   word-break: break-all;
@@ -316,4 +315,8 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(237,195,30,1) 0%, rgb
   cursor: pointer;
   resize: 20px;
   color: crimson;
+}
+
+.list-sections {
+  width: 15vw;
 }

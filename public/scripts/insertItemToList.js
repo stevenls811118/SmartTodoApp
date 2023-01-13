@@ -1,6 +1,6 @@
 const addToBookList = (input, id) => {
   const $newItem = $(`
-    <li class="listitems">
+    <li class="list-items">
       <div class="text">${input}</div><i id="${id}" class="edit-icon fa-solid fa-pencil fa-xs"></i>
     </li>
   `);
@@ -9,7 +9,7 @@ const addToBookList = (input, id) => {
 
 const addToMovieList = (input, id) => {
   const $newItem = $(`
-    <li class="listitems">
+    <li class="list-items">
       <div class="text" >${input}</div><i id="${id}" class="edit-icon fa-solid fa-pencil fa-xs"></i>
     </li>
   `);
@@ -18,7 +18,7 @@ const addToMovieList = (input, id) => {
 
 const addToProductList = (input, id) => {
   const $newItem = $(`
-    <li class="listitems">
+    <li class="list-items">
       <div class="text" id="">${input}</div><i id="${id}" class="edit-icon fa-solid fa-pencil fa-xs"></i>
     </li>
   `);
@@ -27,7 +27,7 @@ const addToProductList = (input, id) => {
 
 const addToRestaurantList = (input, id) => {
   const $newItem = $(`
-    <li class="listitems">
+    <li class="list-items">
       <div class="text" id="">${input}</div><i id="${id}" class="edit-icon fa-solid fa-pencil fa-xs"></i>
     </li>
   `);
@@ -36,7 +36,7 @@ const addToRestaurantList = (input, id) => {
 
 const addToOtherList = (input, id) => {
   const $newItem = $(`
-    <li class="listitems">
+    <li class="list-items">
       <div class="text">${input}</div><i id="${id}" class="edit-icon fa-solid fa-pencil fa-xs"></i>
     </li>
   `);

@@ -5,6 +5,8 @@ body {
   align-items: center;
   min-height: 100vh;
   background-image: url("../image/blob-scene-haikei.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 main {
