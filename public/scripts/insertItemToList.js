@@ -149,6 +149,7 @@ $(document).ready(() => {
       }
     }
   };
+
   const loadItems = () =>
     $.ajax({
       type: "GET",
@@ -183,6 +184,8 @@ $(document).ready(() => {
       }
     });
   });
+
+  loadItems();
 
   /////////////// Delete feature ///////////////
   $(document).on("dblclick", "li", function () {
