@@ -104,7 +104,7 @@ $(document).ready(() => {
     })
   });
 
-  $(document).on("click", "i", function () {
+  $(document).on("click", ".category", function () {
     inputType = $(this).text().toLowerCase().trim();
     console.log("type is: ", inputType);
     $(".fa-solid").hide();
