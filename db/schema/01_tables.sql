@@ -1,6 +1,6 @@
 -- Drop and recreate Users table (Example)
 
-DROP TABLE IF EXISTS users, lists, items, books, movies, no_match, products, restaurants, users CASCADE;
+DROP TABLE IF EXISTS users, lists, items CASCADE;
 
 
 CREATE TABLE users (

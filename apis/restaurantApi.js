@@ -1,9 +1,8 @@
 const axios = require('axios');
 
-const apiFetch = async(input) => {
+const yelpFetch = async(input) => {
   try {
 
-    let OMDBstring = input.replace(/ /g, '+').replace(/&/g, '%26');
     let Yelpstring = input.replace(/ /g, '%20').replace(/&/g, '%26');
 
     const options = {
@@ -15,18 +14,13 @@ const apiFetch = async(input) => {
       }
     };
 
-    const [resOMDB, resYelp] = await axios.all([
-      axios.get(`https://www.omdbapi.com/?t=${OMDBstring}&apikey=7bcf905d`),
-      axios.request(options)
-    ]);
-    // console.log('OMDB data: ', resOMDB.data);
-    // console.log(resOMDB.data.Type);
-    // console.log('Yelp data: ', resYelp.data);
-    return [resOMDB.data, resYelp.data];
+    const resYelp = await axios.request(options);
+    console.log('Yelp data.total: ', resYelp.data.total);
+    return resYelp.data;
   } catch (error) {
     console.log(error.response.body);
   }
 };
 
-// apiFetch('avatar');
-module.exports = apiFetch;
+// yelpFetch('A Man Called Otto');
+module.exports = yelpFetch;

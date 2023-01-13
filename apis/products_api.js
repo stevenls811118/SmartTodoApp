@@ -8,7 +8,7 @@ const search = new SerpApi.GoogleSearch("95b37135ebe388a0274960f4e2d2055aa8ef471
 
 const productDetails = async(input) => {
   try {
-    
+
     const params = {
       engine: "walmart",
       query: `${productString}`,

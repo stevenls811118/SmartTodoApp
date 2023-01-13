@@ -2,6 +2,7 @@
 const db = require("../connection");
 
 const insertItem = (input) => {
+  console.log(input.name, input.type);
   const queryString = `
   INSERT INTO items (list_id, item_name)
   VALUES ($1, $2)
@@ -14,6 +15,8 @@ const insertItem = (input) => {
     queryParams = [1, input.name];
   } else if (input.type === "restaurant") {
     queryParams = [2, input.name];
+  } else if (input.type === "book") {
+    queryParams = [3, input.name];
   } else {
     queryParams = [5, input.name];
   }
@@ -63,4 +66,22 @@ const deleteItem = (name) => {
     });
 };
 
-module.exports = { insertItem, getItems, deleteItem };
+const editItem = (name, id) => {
+  const queryString = `
+  UPDATE items
+  SET item_name = $1
+  WHERE id = $2
+  `;
+
+  return db
+    .query(queryString, [name, id])
+    .then((result) => {
+      return result.rows;
+    })
+    .catch((e) => {
+      console.log(e);
+      return e;
+    });
+};
+
+module.exports = { insertItem, getItems, deleteItem, editItem };
