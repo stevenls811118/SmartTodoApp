@@ -36,6 +36,7 @@ const getItems = () => {
   const queryString = `
   SELECT *
   FROM items
+  ORDER BY id
   `;
 
   return db
