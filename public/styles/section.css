@@ -18,21 +18,25 @@
 }
 
 .list-sections {
-  width: 100%;
   color: white;
-  background-color: #4B4453;
+  background-color: #4b4453;
   text-align: center;
-  max-width: 200px;
+  max-width: 20vw;
   border-radius: 10px;
   padding: 10px;
   font-style: italic;
   font-size: 20px;
+}
+
+.list-sections .list-items {
+  display: flex;
   width: 100%;
-  background-color: #4B4453;
-  text-align: center;
-  max-width: 240px;
-  border-radius: 10px;
-  padding: 10px;
+  background: linear-gradient(90deg, #020024 0%, #edc31e 0%, rgba(2, 23, 19, 0.5116421569) 100%);
+  justify-content: space-between;
+  border-radius: 5px;
+  margin: 0 0 10px 0;
+  padding: 8px;
+  cursor: pointer;
 }
 
 .list-sections {
@@ -41,7 +45,7 @@
 
 .list-sections ol {
   width: 100%;
-  background-color: #4B4453;
+  background-color: #4b4453;
   text-align: center;
   max-width: 240px;
   border-radius: 10px;
