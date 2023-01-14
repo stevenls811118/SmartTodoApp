@@ -50,16 +50,32 @@
   max-width: 240px;
   border-radius: 10px;
   padding: 10px;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list-sections .list-items {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
 }
 
 .list-sections .list-items ol {
   background: cadetblue;
+  margin: 0px;
 }
 
 .list-sections .list-items .text {
   font-size: 14px;
   font-weight: bold;
   word-break: break-all;
+}
+
+.list-sections h3 {
+  margin-bottom: -5px;
 }
 
 .item-entry {
