@@ -28,16 +28,10 @@ app.use(express.static("public")); //middleware statically serve everything in p
 
 
 // API routes
-const userApiRoutes = require("./routes/users-api");
-const widgetApiRoutes = require("./routes/widgets-api");
 const itemsRoutes = require("./routes/items");
 
 // API Endpoints
-app.use("/api/users", userApiRoutes);
-app.use("/api/widgets", widgetApiRoutes);
 app.use("/api/items", itemsRoutes);
-
-
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
