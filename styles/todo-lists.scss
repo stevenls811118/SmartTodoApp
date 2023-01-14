@@ -3,7 +3,6 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: flex-start;
-
   margin: 0 10px;
   height: 60vh;
   order: 3;
@@ -18,25 +17,26 @@
 
 .all-lists {
   width: 100%;
-  background-color: rgba(116, 108, 108, 0.819);
+  background-color: rgba(116, 108, 108, 0.809);
   text-align: center;
   max-width: 255px;
-  border-radius: 10px;
+  border-radius: 5% 5% 5% 5% / 35% 35% 35% 35%;
   padding: 10px;
   height: 60vh;
 }
 .all-containers {
   width: 100%;
-  background-color: rgba(248, 219, 184, 0.716);
+  background-color: rgba(217, 196, 196, 0.674);
   text-align: center;
   max-width: 240px;
-  border-radius: 10px;
+  border-radius: 5% 5% 5% 5% / 35% 35% 35% 35%;
   padding: 10px;
   height: 50vh;
   overflow-y: scroll;
 }
 .all-containers .listitems {
   display: flex;
+  justify-content: space-between;
   width: 100%;
   background: linear-gradient(
     227deg,
@@ -47,7 +47,6 @@
     #a3b0db 74%,
     #a3d0db 100%
   );
-  justify-content: space-between;
   border-radius: 5px;
   margin: 0 0 10px 0;
   padding: 5px 0 5px 0;
@@ -61,35 +60,7 @@
   background: cadetblue;
 }
 
-.Movies-container .listitems .text {
-  font-size: 12px;
-  font-weight: bold;
-  padding: 5px;
-  overflow-wrap: break-word;
-}
-
-.Restaurants-container .listitems .text {
-  font-size: 12px;
-  font-weight: bold;
-  padding: 5px;
-  overflow-wrap: break-word;
-}
-
-.Books-container .listitems .text {
-  font-size: 12px;
-  font-weight: bold;
-  padding: 5px;
-  overflow-wrap: break-word;
-}
-
-.Products-container .listitems .text {
-  font-size: 12px;
-  font-weight: bold;
-  padding: 5px;
-  overflow-wrap: break-word;
-}
-
-.Others-container .listitems .text {
+.all-containers .listitems .text {
   font-size: 12px;
   font-weight: bold;
   padding: 5px;
@@ -316,17 +287,50 @@
 //   cursor: pointer;
 // }
 // .Movies-container .listitems:hover {
-  //   background: cadetblue;
-  // }
-  // .Restaurants-container .listitems:hover {
-  //   background: cadetblue;
-  // }
-  // .Books-container .listitems:hover {
-  //   background: cadetblue;
-  // }
-  // .Products-container .listitems:hover {
-  //   background: cadetblue;
-  // }
-  // .Others-container .listitems:hover {
-  //   background: cadetblue;
-  // }
+//   background: cadetblue;
+// }
+// .Restaurants-container .listitems:hover {
+//   background: cadetblue;
+// }
+// .Books-container .listitems:hover {
+//   background: cadetblue;
+// }
+// .Products-container .listitems:hover {
+//   background: cadetblue;
+// }
+// .Others-container .listitems:hover {
+//   background: cadetblue;
+// }
+// .Movies-container .listitems .text {
+//   font-size: 12px;
+//   font-weight: bold;
+//   padding: 5px;
+//   overflow-wrap: break-word;
+// }
+
+// .Restaurants-container .listitems .text {
+//   font-size: 12px;
+//   font-weight: bold;
+//   padding: 5px;
+//   overflow-wrap: break-word;
+// }
+
+// .Books-container .listitems .text {
+//   font-size: 12px;
+//   font-weight: bold;
+//   padding: 5px;
+//   overflow-wrap: break-word;
+// }
+
+// .Products-container .listitems .text {
+//   font-size: 12px;
+//   font-weight: bold;
+//   padding: 5px;
+//   overflow-wrap: break-word;
+// }
+// .Others-container .listitems .text {
+//   font-size: 12px;
+//   font-weight: bold;
+//   padding: 5px;
+//   overflow-wrap: break-word;
+// }
