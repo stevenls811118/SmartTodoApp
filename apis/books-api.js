@@ -8,7 +8,7 @@ const gBooksDetails = async(input) => {
     // console.log(gBooksString); //Test Code
     
     // async promise for Google books API
-    const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${input}`);
+    const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q="${input}"`);
 
     console.log('Google books data.totalItems: ', response.data.totalItems);
   
