@@ -111,7 +111,7 @@ $(document).ready(() => {
     inputType = $(this).text().toLowerCase().trim();
     console.log("type is: ", inputType);
     $(".fa-solid").hide();
-    let name = $("#myInput").val();
+    let name = title($("#myInput").val());
     console.log("name is: ", name);
     let data = { name: name, type: inputType, finalResult: true };
     console.log("data is: ", data);

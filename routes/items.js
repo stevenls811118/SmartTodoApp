@@ -8,14 +8,14 @@ const {
 } = require("../db/queries/smart.js");
 const omdbFetch = require("../apis/movieApi");
 const yelpFetch = require("../apis/restaurantApi.js");
-const gBooksDetails = require("../apis/books-api.js");
+const openLibDetails = require("../apis/books-api.js");
 const SerpApiFetch = require("../apis/products_api.js");
 
 router.post("/", (req, res) => {
   console.log("req.body: ", req.body);
   let keyword = req.body.name;
   if (req.body.finalResult === undefined) {
-    Promise.all([omdbFetch(keyword), yelpFetch(keyword), gBooksDetails(keyword), SerpApiFetch(keyword)])
+    Promise.all([omdbFetch(keyword), yelpFetch(keyword), openLibDetails(keyword), SerpApiFetch(keyword)])
       .then((result) => {
         // console.log("OMDB result is: ", result[0].Title, result[0].Type);
         let category = [];

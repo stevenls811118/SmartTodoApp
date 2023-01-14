@@ -1,32 +1,6 @@
-body {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  min-height: 100vh;
-  background-image: url("../image/blob-scene-haikei.png");
-}
-
 main {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-}
-
-footer {
-  position: fixed;
-  width: 100vw;
-  left: 0;
-  bottom: 0;
-  color: white;
-  text-align: center;
-}
-
-.lists {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: flex-start;
-  width: 100vw;
-  max-height: 50vh;
+  height: 70vh;
 }

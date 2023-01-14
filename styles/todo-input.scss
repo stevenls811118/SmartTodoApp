@@ -1,0 +1,78 @@
+// CSS wrapper for new todo entry
+.item-entry {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+// CSS for text entry box
+.text-input {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  border-radius: 5px;
+}
+
+/* Clear input after */
+.text-input::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.input-form {
+  display: flex;
+  justify-content: center;
+  padding-right: 10%;
+  padding-left: 10%;
+  width: 100%;
+}
+
+.input-button {
+  margin: 0;
+  border: 0;
+  border-radius: 3px;
+  width: 75%;
+  padding: 10px;
+  font-family: 'Dosis', sans-serif;
+  font-weight: 800;
+}
+
+.addBtn {
+  padding: 10px;
+  width: 25%;
+  background: #d9d9d9;
+  color: #555;
+  float: right;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 3px;
+  font-family: 'Dosis', sans-serif;
+  font-weight: 800;
+}
+
+.addBtn:hover {
+  background-color: #bbb;
+}
+
+.form-wrapper {
+  margin: 0.5rem;
+}
+
+// CSS for duplicate category selector
+#duplicate {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+
+}
+
+#duplicate i {
+  display: none;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
