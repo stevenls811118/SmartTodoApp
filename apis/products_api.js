@@ -1,5 +1,5 @@
 const SerpApi = require('google-search-results-nodejs');
-const search = new SerpApi.GoogleSearch("95b37135ebe388a0274960f4e2d2055aa8ef471b0c9ecd3d468f11386212b91e");
+const search = new SerpApi.GoogleSearch("aa46ee7002b8019769d5949f92893822602a74f94d2062645d74e56de0998117");
 const serpApiFetch = async(input, req, res) => {
 
   return new Promise((resolve) => {
