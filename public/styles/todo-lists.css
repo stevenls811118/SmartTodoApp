@@ -17,7 +17,8 @@
 
 .all-lists {
   width: 100%;
-  background-color: rgba(116, 108, 108, 0.809);
+  background-color: #8a98d6b7;
+  border: solid black 1px;
   text-align: center;
   max-width: 255px;
   border-radius: 5% 5% 5% 5%/35% 35% 35% 35%;
@@ -27,7 +28,7 @@
 
 .all-containers {
   width: 100%;
-  background-color: rgba(217, 196, 196, 0.674);
+  background-color: rgba(50, 53, 54, 0.667);
   text-align: center;
   max-width: 240px;
   border-radius: 5% 5% 5% 5%/35% 35% 35% 35%;
@@ -36,9 +37,14 @@
   overflow-y: scroll;
 }
 
+.all-containers::-webkit-scrollbar {
+  display: none;
+}
+
 .all-containers .listitems {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   background: linear-gradient(227deg, #a3d0db 0%, #a3d0db 20%, #a3dbd0 34%, #a3addb 59%, #a3b0db 74%, #a3d0db 100%);
   border-radius: 5px;
