@@ -14,19 +14,17 @@
     <link rel="stylesheet" href="./styles/navbar.css" />
     <link rel="stylesheet" href="./styles/main.css" />
     <link rel="stylesheet" href="./styles/section.css" />
+    <link rel="stylesheet" href="./styles/todo-lists.css" />
+    <link rel="stylesheet" href="./styles/todo-input.css" />
+
     <!--External CSS-->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@1,300;1,600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@1,300;1,600&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/c3b30720d4.js"
-      crossorigin="anonymous"
-    ></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@1,300;1,600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@1,300;1,600&display=swap" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/c3b30720d4.js" crossorigin="anonymous"></script>
 
     <!--External JS-->
     <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
@@ -56,78 +54,68 @@
               .go();
           });
         </script>
-        <span class="navbar-menu">
-          <div class="dropdown">
-            <button class="dropbtn">Menu</button>
-            <div class="dropdown-content">
-              <a href="#">My Lists</a>
-              <a href="#">Login</a>
-            </div>
-          </div>
-        </span>
       </nav>
     </header>
     <main>
       <section class="item-entry">
         <div class="text-input">
-          <h3 class="todo-title">What to do next?</h3>
-          <form id="input-form">
-            <input
+          <div class="form-wrapper">
+            <form id="input-form" class="input-form">
+              <input class="input-button"
               name="todo_input"
               type="text"
               id="myInput"
-              placeholder="What's next?"
+              placeholder="What to do next?"
               required
             />
             <input type="submit" class="addBtn" />
-            <div class="duplicateMessage">
-              <div id="duplicate">
-                <i id="movieButton" class="category fa-solid fa-video">
-                  Movie</i
-                >
-                <i id="restaurantButton" class="category fa-solid fa-utensils">
-                  Restaurant</i
-                >
-                <i id="bookButton" class="category fa-solid fa-book"> Book</i>
-                <i
-                  id="shoppingButton"
-                  class="category fa-solid fa-cart-shopping"
-                >
-                  Product</i
-                >
-              </div>
-            </div>
           </form>
         </div>
+            <div class="duplicate-wrapper">
+              <div class="duplicate-message">
+                <div id="duplicate">
+                  <i id="movieButton" class="category fa-solid fa-video"> Movie</i>
+                  <i id="restaurantButton" class="category fa-solid fa-utensils">Restaurant</i>
+                  <i id="bookButton" class="category fa-solid fa-book"> Book</i>
+                  <i id="shoppingButton" class="category fa-solid fa-cart-shopping">Product</i>
+                </div>
+              </div>
+            </div>
+          </div>
       </section>
       <section class="lists">
-        <!-- Film/Series (to watch) -->
-        <div class="Movies-section">
-          <h3 class="Movies-top">Film/Series To Watch:</h3>
-          <ol class="Movies-container allLists"></ol>
-        </div>
+        <div class="list-wrapper-top">
+          <!-- Film/Series (to watch) -->
+          <div class="Movies-section">
+            <h3 class="Movies-top">Film/Series To Watch:</h3>
+            <div class="movie-list-scrollbar">
+                <ol class="Movies-container allLists"></ol>
+            </div>
+          </div>
 
-        <!-- Restaurants/Cafes (to eat) -->
-        <div class="Restaurants-section">
-          <h3 class="Restaurants-top">Places To Eat:</h3>
-          <ol class="Restaurants-container allLists"></ol>
+          <!-- Restaurants/Cafes (to eat) -->
+          <div class="Restaurants-section">
+            <h3 class="Restaurants-top">Places To Eat:</h3>
+            <ol class="Restaurants-container allLists"></ol>
+          </div>
         </div>
+        <div class="list-wrapper-bottom">
+          <!-- Books (to read) -->
+          <div class="Books-section">
+            <h3 class="Books-top">Books To Read:</h3>
+            <ol class="Books-container allLists"></ol>
+          </div>
 
-        <!-- Books (to read) -->
-        <div class="Books-section">
-          <h3 class="Books-top">Books To Read:</h3>
-          <ol class="Books-container allLists"></ol>
-        </div>
-
-        <!-- Products -->
-        <div class="Products-section">
-          <h3 class="Products-top">Products To Buy:</h3>
-          <ol class="Products-container allLists"></ol>
+          <!-- Products -->
+          <div class="Products-section">
+            <h3 class="Products-top">Products To Buy:</h3>
+            <ol class="Products-container allLists"></ol>
+          </div>
         </div>
 
         <!-- Other -->
         <div class="Others-section">
-          <h3 class="Others-top">Others:</h3>
+          <h3 class="Others-top">General:</h3>
           <ol class="Others-container allLists"></ol>
         </div>
       </section>
