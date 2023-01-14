@@ -7,7 +7,7 @@ const yelpFetch = async(input) => {
 
     const options = {
       method: 'GET',
-      url: `https://api.yelp.com/v3/businesses/search?location=T3P%200P2&term="${Yelpstring}"&radius=10000&attributes=&sort_by=rating&limit=3`,
+      url: `https://api.yelp.com/v3/businesses/search?location=T3P%200P2&term="${Yelpstring}"&radius=10000&categories=restaurants&sort_by=rating&limit=3`,
       headers: {
         accept: 'application/json',
         Authorization: 'Bearer IlU3F0N7JBOAIGEr3_C43kvXDwTFnug8-dti8miCOuNnssGTacfiDfxB2KtUMAfCudghUy-EqGtn2yINVNbo6ZkGT-NHLIU8Xq1lEMRQ1Xo675l4KG50f2CwfeW8Y3Yx'
@@ -22,5 +22,4 @@ const yelpFetch = async(input) => {
   }
 };
 
-// yelpFetch('A Man Called Otto');
 module.exports = yelpFetch;

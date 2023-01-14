@@ -5,7 +5,7 @@ const omdbFetch = async(input) => {
 
     let OMDBstring = input.replace(/ /g, '+').replace(/&/g, '%26');
  
-    const resOMDB = await axios.get(`https://www.omdbapi.com/?t=${OMDBstring}&apikey=7bcf905d`);
+    const resOMDB = await axios.get(`https://www.omdbapi.com/?t="${OMDBstring}"&apikey=7bcf905d`);
       
     console.log('OMDB data.Type: ', resOMDB.data.Type);
     return resOMDB.data;
@@ -14,5 +14,4 @@ const omdbFetch = async(input) => {
   }
 };
 
-// omdbFetch('avatar');
 module.exports = omdbFetch;

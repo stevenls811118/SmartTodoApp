@@ -17,7 +17,7 @@ router.post("/", (req, res) => {
   if (req.body.finalResult === undefined) {
     Promise.all([omdbFetch(keyword), yelpFetch(keyword), openLibDetails(keyword), SerpApiFetch(keyword)])
       .then((result) => {
-        // console.log("OMDB result is: ", result[0].Title, result[0].Type);
+
         let category = [];
         let yelpType = undefined;
         let googleBookType = undefined;
@@ -49,7 +49,6 @@ router.post("/", (req, res) => {
         return input;
       })
       .then((input) => {
-        console.log("========", input);
         if (input.category.length > 1) {
           return res.status(400).send({
             status: 3,
@@ -76,7 +75,6 @@ router.post("/", (req, res) => {
 
 router.get("/", (req, res) => {
   getItems().then((items) => {
-    // console.log(items);
     res.json(items);
   });
 });
