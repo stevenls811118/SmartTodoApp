@@ -7,55 +7,71 @@
   // justify-content: space-between
 }
 
-.duplicateMessage h2{
+.duplicateMessage h2 {
   display: none;
 
   font-size: 25px;
-color: red;
-font-family: 'Source Sans Pro', sans-serif;
+  color: red;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 #duplicate i {
   display: none;
   margin-left: 10px;
   margin-right: 10px;
-
 }
 
-// LIST STYLING
-.Books-section {
+// LIST STYLING all lists
+.list-sections {
   width: 100%;
   color: white;
-  background-color: #4B4453;
-   text-align: center;
+  background-color: #4b4453;
+  text-align: center;
   max-width: 200px;
-    border-radius: 10px;
+  border-radius: 10px;
   padding: 10px;
-}
-
-.Books-container {
+  font-style: italic;
+  font-size: 20px;
   width: 100%;
-  background-color: #4B4453;
+  background-color: #4b4453;
   text-align: center;
   max-width: 240px;
   border-radius: 10px;
   padding: 10px;
 }
 
-.Books-container .list-items{
+.list-sections {
+  width: 15vw;
+}
+.list-sections ol {
+  width: 100%;
+  background-color: #4b4453;
+  text-align: center;
+  max-width: 240px;
+  border-radius: 10px;
+  padding: 10px;
+}
+.list-sections .list-items ol {
+  background: cadetblue;
+}
+
+// LIST STYLING books
+
+.Books-container .list-items {
   display: flex;
   width: 100%;
-  background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(237,195,30,1) 0%, rgba(2,23,19,0.5116421568627452) 100%);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(237, 195, 30, 1) 0%,
+    rgba(2, 23, 19, 0.5116421568627452) 100%
+  );
   justify-content: space-between;
   border-radius: 5px;
   margin: 0 0 10px 0;
   padding: 8px;
   cursor: pointer;
-}
-
-.Books-container .list-items:hover {
-  background:cadetblue;
 }
 
 .Books-container .list-items .text {
@@ -63,38 +79,28 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(237,195,30,1) 0%, rgb
   font-weight: bold;
   word-break: break-all;
 }
+// LIST STYLING movies
 
-.Books-top {
-  font-style: italic;
-  font-size: 20px;
-}
-
-.Movies-section {
-  width: 100%;
-  color: white;
-  background-color: #4B4453;
-   text-align: center;
-  max-width: 200px;
-    border-radius: 10px;
-  padding: 10px;
-}
-
-.Movies-container {
-  width: 100%;
-  background-color: #4B4453;
-  text-align: center;
-  max-width: 240px;
-  border-radius: 10px;
-  padding: 10px;
-}
-
-.Movies-container .list-items{
+.Movies-container .list-items {
   display: flex;
   width: 100%;
-  // background: #a3d0db;
-  // background: linear-gradient(227deg, #a3d0db 0%, #a3b0db 20%, #a3addb 34%, #a3dbd0 59%, #a3d0db 74%, #a3d0db 100%);
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(237,195,30,1) 0%, rgba(2,23,19,0.5116421568627452) 100%);
+  background: #a3d0db;
+  background: linear-gradient(
+    227deg,
+    #a3d0db 0%,
+    #a3b0db 20%,
+    #a3addb 34%,
+    #a3dbd0 59%,
+    #a3d0db 74%,
+    #a3d0db 100%
+  );
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(237, 195, 30, 1) 0%,
+    rgba(2, 23, 19, 0.5116421568627452) 100%
+  );
   justify-content: space-between;
   border-radius: 5px;
   margin: 0 0 10px 0;
@@ -102,45 +108,29 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(237,195,30,1) 0%, rgb
   cursor: pointer;
 }
 
-.Movies-container .list-items:hover {
-  background:cadetblue;
-}
+// .Movies-container .list-items:hover {
+//   background:cadetblue;
+// }
 
 .Movies-container .list-items .text {
   font-size: 14px;
   font-weight: bold;
   word-break: break-all;
-
 }
 
-.Movies-top {
-  font-style: italic;
-  font-size: 20px;
-}
+// LIST STYLING products
+//
 
-.Products-section {
-  width: 100%;
-  color: white;
-  background-color: #4B4453;  text-align: center;
-  max-width: 200px;
-    border-radius: 10px;
-  padding: 10px;
-}
-
-.Products-container {
-  width: 100%;
-  background-color: #4B4453;
-  text-align: center;
-  max-width: 240px;
-  border-radius: 10px;
-  padding: 10px;
-}
-
-.Products-container .list-items{
+.Products-container .list-items {
   display: flex;
   width: 100%;
-  background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(237,195,30,1) 0%, rgba(2,23,19,0.5116421568627452) 100%);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(237, 195, 30, 1) 0%,
+    rgba(2, 23, 19, 0.5116421568627452) 100%
+  );
   justify-content: space-between;
   border-radius: 5px;
   margin: 0 0 10px 0;
@@ -148,55 +138,33 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(237,195,30,1) 0%, rgb
   cursor: pointer;
 }
 
-.Products-container .list-items:hover {
-  background:cadetblue;
-}
+// .Products-container .list-items:hover {
+//   background:cadetblue;
+// }
 
 .Products-container .list-items .text {
   font-size: 14px;
   font-weight: bold;
   word-break: break-all;
-
 }
 
-.Products-top {
-  font-style: italic;
-  font-size: 20px;
-}
+// LIST STYLING restaurants
 
-.Restaurants-section {
-  width: 100%;
-  color: white;
-  background-color: #4B4453;
-  text-align: center;
-  max-width: 200px;
-    border-radius: 10px;
-  padding: 10px;
-}
-
-.Restaurants-container {
-  width: 100%;
-  background-color: #4B4453;
-  text-align: center;
-  max-width: 240px;
-  border-radius: 10px;
-  padding: 10px;
-}
-
-.Restaurants-container .list-items{
+.Restaurants-container .list-items {
   display: flex;
   width: 100%;
-  background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(237,195,30,1) 0%, rgba(2,23,19,0.5116421568627452) 100%);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(237, 195, 30, 1) 0%,
+    rgba(2, 23, 19, 0.5116421568627452) 100%
+  );
   justify-content: space-between;
   border-radius: 5px;
   margin: 0 0 10px 0;
   padding: 8px;
   cursor: pointer;
-}
-
-.Restaurants-container .list-items:hover {
-  background:cadetblue;
 }
 
 .Restaurants-container .list-items .text {
@@ -204,32 +172,17 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(237,195,30,1) 0%, rgb
   font-weight: bold;
 }
 
-.Restaurants-top {
-  font-style: italic;
-  font-size: 20px;
-}
+// LIST STYLING others
 
-.Others-section {
-  width: 100%;
-  color: white;
-  background-color: #4B4453;  text-align: center;
-  max-width: 200px;
-   border-radius: 10px;
-  padding: 10px;
-}
-
-.Others-container {
-  width: 100%;
-  text-align: center;
-  max-width: 240px;
-  border-radius: 10px;
-  padding: 10px;
-}
-
-.Others-container .list-items{
+.Others-container .list-items {
   display: flex;
   width: 100%;
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(237,195,30,1) 0%, rgba(2,23,19,0.5116421568627452) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(237, 195, 30, 1) 0%,
+    rgba(2, 23, 19, 0.5116421568627452) 100%
+  );
   justify-content: space-between;
   border-radius: 5px;
   margin: 0 0 10px 0;
@@ -237,39 +190,142 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(237,195,30,1) 0%, rgb
   cursor: pointer;
 }
 
-.Others-container .list-items:hover {
-  background:cadetblue;
-}
-
 .Others-container .list-items .text {
   font-size: 14px;
   font-weight: bold;
   word-break: break-all;
-
 }
+// MAYBE DELETE
+// .Books-container .list-items:hover {
+//   background:cadetblue;
+// }
 
-.Others-top {
-  font-style: italic;
-  font-size: 20px;
-}
+// .Movies-section {
+//   width: 100%;
+//   color: white;
+//   background-color: #4B4453;
+//    text-align: center;
+//   max-width: 200px;
+//     border-radius: 10px;
+//   padding: 10px;
+// }
 
-.fa-solid:hover {
-  cursor: pointer;
-  resize: 20px;
-  color: crimson;
-}
+// .Movies-container {
+//   width: 100%;
+//   background-color: #4B4453;
+//   text-align: center;
+//   max-width: 240px;
+//   border-radius: 10px;
+//   padding: 10px;
+// }
+// .Books-top {
+//   font-style: italic;
+//   font-size: 20px;
+// }
 
-.list-sections {
-  width: 15vw;
-}
+// .Movies-top {
+//   font-style: italic;
+//   font-size: 20px;
+// }
 
+// .Products-section {
+//   width: 100%;
+//   color: white;
+//   background-color: #4B4453;  text-align: center;
+//   max-width: 200px;
+//     border-radius: 10px;
+//   padding: 10px;
+// }
+
+// .Products-container {
+//   width: 100%;
+//   background-color: #4B4453;
+//   text-align: center;
+//   max-width: 240px;
+//   border-radius: 10px;
+//   padding: 10px;
+// }
+// .Products-top {
+//   font-style: italic;
+//   font-size: 20px;
+// }
+
+// .Books-section {
+//   width: 100%;
+//   color: white;
+//   background-color: #4B4453;
+//    text-align: center;
+//   max-width: 200px;
+//     border-radius: 10px;
+//   padding: 10px;
+// }
+
+// .Books-container {
+//   width: 100%;
+//   background-color: #4B4453;
+//   text-align: center;
+//   max-width: 240px;
+//   border-radius: 10px;
+//   padding: 10px;
+// }
+
+// .Restaurants-top {
+//   font-style: italic;
+//   font-size: 20px;
+// }
+
+// .Others-section {
+//   width: 100%;
+//   color: white;
+//   background-color: #4B4453;  text-align: center;
+//   max-width: 200px;
+//    border-radius: 10px;
+//   padding: 10px;
+// }
+// .Others-container {
+//   width: 100%;
+//   text-align: center;
+//   max-width: 240px;
+//   border-radius: 10px;
+//   padding: 10px;
+// }
+
+// .Others-top {
+//   font-style: italic;
+//   font-size: 20px;
+// }
+
+// .Others-container .list-items:hover {
+//   background:cadetblue;
+// }
+
+// .Restaurants-container .list-items:hover {
+//   background:cadetblue;
+// }
+// .Restaurants-section {
+//   width: 100%;
+//   color: white;
+//   background-color: #4B4453;
+//   text-align: center;
+//   max-width: 200px;
+//     border-radius: 10px;
+//   padding: 10px;
+// }
+
+// .Restaurants-container {
+//   width: 100%;
+//   background-color: #4B4453;
+//   text-align: center;
+//   max-width: 240px;
+//   border-radius: 10px;
+//   padding: 10px;
+// }
 
 //USER INPUT FIELD
 .item-entry {
   display: flex;
   justify-content: center;
 }
-
 
 .text-input {
   color: white;
@@ -307,3 +363,8 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(237,195,30,1) 0%, rgb
   background-color: #bbb;
 }
 
+.fa-solid:hover {
+  cursor: pointer;
+  resize: 20px;
+  color: crimson;
+}

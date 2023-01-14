@@ -17,7 +17,7 @@
   margin-right: 10px;
 }
 
-.Books-section {
+.list-sections {
   width: 100%;
   color: white;
   background-color: #4B4453;
@@ -25,15 +25,31 @@
   max-width: 200px;
   border-radius: 10px;
   padding: 10px;
-}
-
-.Books-container {
+  font-style: italic;
+  font-size: 20px;
   width: 100%;
   background-color: #4B4453;
   text-align: center;
   max-width: 240px;
   border-radius: 10px;
   padding: 10px;
+}
+
+.list-sections {
+  width: 15vw;
+}
+
+.list-sections ol {
+  width: 100%;
+  background-color: #4B4453;
+  text-align: center;
+  max-width: 240px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.list-sections .list-items ol {
+  background: cadetblue;
 }
 
 .Books-container .list-items {
@@ -48,19 +64,82 @@
   cursor: pointer;
 }
 
-.Books-container .list-items:hover {
-  background: cadetblue;
-}
-
 .Books-container .list-items .text {
   font-size: 14px;
   font-weight: bold;
   word-break: break-all;
 }
 
-.Books-top {
-  font-style: italic;
-  font-size: 20px;
+.Movies-container .list-items {
+  display: flex;
+  width: 100%;
+  background: #a3d0db;
+  background: linear-gradient(227deg, #a3d0db 0%, #a3b0db 20%, #a3addb 34%, #a3dbd0 59%, #a3d0db 74%, #a3d0db 100%);
+  background: #020024;
+  background: linear-gradient(90deg, #020024 0%, #edc31e 0%, rgba(2, 23, 19, 0.5116421569) 100%);
+  justify-content: space-between;
+  border-radius: 5px;
+  margin: 0 0 10px 0;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.Movies-container .list-items .text {
+  font-size: 14px;
+  font-weight: bold;
+  word-break: break-all;
+}
+
+.Products-container .list-items {
+  display: flex;
+  width: 100%;
+  background: #020024;
+  background: linear-gradient(90deg, #020024 0%, #edc31e 0%, rgba(2, 23, 19, 0.5116421569) 100%);
+  justify-content: space-between;
+  border-radius: 5px;
+  margin: 0 0 10px 0;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.Products-container .list-items .text {
+  font-size: 14px;
+  font-weight: bold;
+  word-break: break-all;
+}
+
+.Restaurants-container .list-items {
+  display: flex;
+  width: 100%;
+  background: #020024;
+  background: linear-gradient(90deg, #020024 0%, #edc31e 0%, rgba(2, 23, 19, 0.5116421569) 100%);
+  justify-content: space-between;
+  border-radius: 5px;
+  margin: 0 0 10px 0;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.Restaurants-container .list-items .text {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.Others-container .list-items {
+  display: flex;
+  width: 100%;
+  background: linear-gradient(90deg, #020024 0%, #edc31e 0%, rgba(2, 23, 19, 0.5116421569) 100%);
+  justify-content: space-between;
+  border-radius: 5px;
+  margin: 0 0 10px 0;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.Others-container .list-items .text {
+  font-size: 14px;
+  font-weight: bold;
+  word-break: break-all;
 }
 
 .item-entry {
@@ -104,193 +183,8 @@
   background-color: #bbb;
 }
 
-.Movies-section {
-  width: 100%;
-  color: white;
-  background-color: #4B4453;
-  text-align: center;
-  max-width: 200px;
-  border-radius: 10px;
-  padding: 10px;
-}
-
-.Movies-container {
-  width: 100%;
-  background-color: #4B4453;
-  text-align: center;
-  max-width: 240px;
-  border-radius: 10px;
-  padding: 10px;
-}
-
-.Movies-container .list-items {
-  display: flex;
-  width: 100%;
-  background: #020024;
-  background: linear-gradient(90deg, #020024 0%, #edc31e 0%, rgba(2, 23, 19, 0.5116421569) 100%);
-  justify-content: space-between;
-  border-radius: 5px;
-  margin: 0 0 10px 0;
-  padding: 8px;
-  cursor: pointer;
-}
-
-.Movies-container .list-items:hover {
-  background: cadetblue;
-}
-
-.Movies-container .list-items .text {
-  font-size: 14px;
-  font-weight: bold;
-  word-break: break-all;
-}
-
-.Movies-top {
-  font-style: italic;
-  font-size: 20px;
-}
-
-.Products-section {
-  width: 100%;
-  color: white;
-  background-color: #4B4453;
-  text-align: center;
-  max-width: 200px;
-  border-radius: 10px;
-  padding: 10px;
-}
-
-.Products-container {
-  width: 100%;
-  background-color: #4B4453;
-  text-align: center;
-  max-width: 240px;
-  border-radius: 10px;
-  padding: 10px;
-}
-
-.Products-container .list-items {
-  display: flex;
-  width: 100%;
-  background: #020024;
-  background: linear-gradient(90deg, #020024 0%, #edc31e 0%, rgba(2, 23, 19, 0.5116421569) 100%);
-  justify-content: space-between;
-  border-radius: 5px;
-  margin: 0 0 10px 0;
-  padding: 8px;
-  cursor: pointer;
-}
-
-.Products-container .list-items:hover {
-  background: cadetblue;
-}
-
-.Products-container .list-items .text {
-  font-size: 14px;
-  font-weight: bold;
-  word-break: break-all;
-}
-
-.Products-top {
-  font-style: italic;
-  font-size: 20px;
-}
-
-.Restaurants-section {
-  width: 100%;
-  color: white;
-  background-color: #4B4453;
-  text-align: center;
-  max-width: 200px;
-  border-radius: 10px;
-  padding: 10px;
-}
-
-.Restaurants-container {
-  width: 100%;
-  background-color: #4B4453;
-  text-align: center;
-  max-width: 240px;
-  border-radius: 10px;
-  padding: 10px;
-}
-
-.Restaurants-container .list-items {
-  display: flex;
-  width: 100%;
-  background: #020024;
-  background: linear-gradient(90deg, #020024 0%, #edc31e 0%, rgba(2, 23, 19, 0.5116421569) 100%);
-  justify-content: space-between;
-  border-radius: 5px;
-  margin: 0 0 10px 0;
-  padding: 8px;
-  cursor: pointer;
-}
-
-.Restaurants-container .list-items:hover {
-  background: cadetblue;
-}
-
-.Restaurants-container .list-items .text {
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.Restaurants-top {
-  font-style: italic;
-  font-size: 20px;
-}
-
-.Others-section {
-  width: 100%;
-  color: white;
-  background-color: #4B4453;
-  text-align: center;
-  max-width: 200px;
-  border-radius: 10px;
-  padding: 10px;
-}
-
-.Others-container {
-  width: 100%;
-  text-align: center;
-  max-width: 240px;
-  border-radius: 10px;
-  padding: 10px;
-}
-
-.Others-container .list-items {
-  display: flex;
-  width: 100%;
-  background: linear-gradient(90deg, #020024 0%, #edc31e 0%, rgba(2, 23, 19, 0.5116421569) 100%);
-  justify-content: space-between;
-  border-radius: 5px;
-  margin: 0 0 10px 0;
-  padding: 8px;
-  cursor: pointer;
-}
-
-.Others-container .list-items:hover {
-  background: cadetblue;
-}
-
-.Others-container .list-items .text {
-  font-size: 14px;
-  font-weight: bold;
-  word-break: break-all;
-}
-
-.Others-top {
-  font-style: italic;
-  font-size: 20px;
-}
-
 .fa-solid:hover {
   cursor: pointer;
   resize: 20px;
   color: crimson;
-}
-
-.list-sections {
-  width: 15vw;
 }
