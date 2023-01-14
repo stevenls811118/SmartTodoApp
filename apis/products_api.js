@@ -1,5 +1,5 @@
 const SerpApi = require('google-search-results-nodejs');
-const search = new SerpApi.GoogleSearch("95b37135ebe388a0274960f4e2d2055aa8ef471b0c9ecd3d468f11386212b91e");
+const search = new SerpApi.GoogleSearch("a5da1b8a8cf1954f193059de03c1785017afb51eb30464e96a8c4a35547587e5");
 const serpApiFetch = async(input, req, res) => {
 
   return new Promise((resolve) => {
@@ -24,7 +24,7 @@ const serpApiFetch = async(input, req, res) => {
 };
 // Show result as JSON
 
-// serpApiFetch("RTX 4070 Ti")
+// serpApiFetch("Rice Table Korean Kitchen")
 //   .then(data => {
 //     console.log(data);
 //   });
