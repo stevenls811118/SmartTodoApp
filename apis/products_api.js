@@ -1,5 +1,5 @@
 const SerpApi = require('google-search-results-nodejs');
-const search = new SerpApi.GoogleSearch("660915ab6df368e73435200704f0519fd314c30c9b91db82f1838e2e0e19b5e3");
+const search = new SerpApi.GoogleSearch("95b37135ebe388a0274960f4e2d2055aa8ef471b0c9ecd3d468f11386212b91e");
 
 const serpApiFetch = async(input, req, res) => {
 
@@ -23,11 +23,4 @@ const serpApiFetch = async(input, req, res) => {
     search.json(params, callback);
   });
 };
-// Show result as JSON
-
-// serpApiFetch("RTX 4070 Ti")
-//   .then(data => {
-//     console.log(data);
-//   });
-
 module.exports = serpApiFetch;
