@@ -27,6 +27,15 @@ If the TODO is linked to multiple categories, the user will be able to select th
   - Note: nodemon is used, so you should not have to restart your server
 8. Visit `http://localhost:8080/`
 
+## Final Product
+
+### Home Page
+!["final-product-gif"](/docs/final-product.gif)
+### Add TODO
+!["final-product-gif-2](/docs/final-product-add.gif)
+### Delete TODO
+!["final-product-gif-3](/docs/final-product-delete.gif)
+
 ## API's and Features
 This project uses 4 API's to find the correct categories for the TODO input:
 - Open Movie Database API (Film/Series)
