@@ -26,6 +26,7 @@
   padding: 10px;
   font-style: italic;
   font-size: 20px;
+  border-radius: 100% 0% 100% 0%/6% 90% 10% 94%;
 }
 
 .list-sections .list-items {
@@ -47,7 +48,7 @@
   width: 100%;
   background-color: #4b4453;
   text-align: center;
-  max-width: 240px;
+  max-width: 100%;
   border-radius: 10px;
   padding: 10px;
   font-size: 18px;
