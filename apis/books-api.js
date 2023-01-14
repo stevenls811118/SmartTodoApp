@@ -8,7 +8,7 @@ const gBooksDetails = async(input) => {
     // console.log(gBooksString); //Test Code
     
     // async promise for Google books API
-    const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${input}`);
+    const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=intitle="${input}"`);
 
     console.log('Google books data.totalItems: ', response.data.totalItems);
   
@@ -20,5 +20,6 @@ const gBooksDetails = async(input) => {
     // console.log(`book has not been found!`); //Test Code
   }
 };
-// gBooksDetails('Harry Potter');
+
+gBooksDetails('Tobe Teppanyaki Lounge');
 module.exports = gBooksDetails;
