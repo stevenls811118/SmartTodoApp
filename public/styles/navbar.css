@@ -12,6 +12,7 @@
 .navbar-title {
   font-family: "Dosis", sans-serif;
   text-transform: uppercase;
+  text-decoration: solid;
   font-size: 4em;
   padding: 1.5rem;
   font-weight: 800;
