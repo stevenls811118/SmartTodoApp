@@ -7,7 +7,7 @@ const yelpFetch = async(input) => {
 
     const options = {
       method: 'GET',
-      url: `https://api.yelp.com/v3/businesses/search?location=T3P%200P2&term=${Yelpstring}&radius=4000&attributes=&sort_by=rating&limit=3`,
+      url: `https://api.yelp.com/v3/businesses/search?location=T3P%200P2&term=${Yelpstring}&radius=40000&attributes=&sort_by=rating&limit=3`,
       headers: {
         accept: 'application/json',
         Authorization: 'Bearer IlU3F0N7JBOAIGEr3_C43kvXDwTFnug8-dti8miCOuNnssGTacfiDfxB2KtUMAfCudghUy-EqGtn2yINVNbo6ZkGT-NHLIU8Xq1lEMRQ1Xo675l4KG50f2CwfeW8Y3Yx'
@@ -15,7 +15,16 @@ const yelpFetch = async(input) => {
     };
 
     const resYelp = await axios.request(options);
-    console.log('Yelp data.total: ', resYelp.data.total);
+    // console.log('Yelp data.total: ', resYelp.data.total);
+    
+    let total = resYelp.data.total
+    // console.log(total);
+
+    if (total > 0) {
+      console.log("This is a Restaurant");
+      return true;
+    }
+
     return resYelp.data;
   } catch (error) {
     console.log(error.response.body);

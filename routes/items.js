@@ -12,28 +12,30 @@ const gBooksDetails = require("../apis/books-api.js");
 const SerpApiFetch = require("../apis/products_api.js");
 
 router.post("/", (req, res) => {
-  console.log("req.body: ", req.body);
+  // console.log("req.body: ", req.body);
   let keyword = req.body.name;
   if (req.body.finalResult === undefined) {
     Promise.all([omdbFetch(keyword), yelpFetch(keyword), gBooksDetails(keyword), SerpApiFetch(keyword)])
       .then((result) => {
         // console.log("OMDB result is: ", result[0].Title, result[0].Type);
         let category = [];
+        let omdbType = undefined;
         let yelpType = undefined;
         let googleBookType = undefined;
         let serpApiType = undefined;
         let input = { name: undefined, type: undefined };
 
-        if (result[0].Type !== undefined) {
-          category.push(result[0].Type);
+        if (result[0] !== false) {
+          omdbType = "movie";
+          category.push(omdbType);
         }
         
-        if (result[1].total !== 0) {
+        if (result[1] !== false) {
           yelpType = "restaurant";
           category.push(yelpType);
         }
-
-        if (result[2] !== 0) {
+        
+        if (result[2] !== false) {
           googleBookType = "book";
           category.push(googleBookType);
         }
@@ -45,11 +47,11 @@ router.post("/", (req, res) => {
 
         input = { category, name: req.body.name, type: category[0] };
 
-        console.log("input is: ", input);
+        // console.log("input is: ", input);
         return input;
       })
       .then((input) => {
-        console.log("========", input);
+        // console.log("========", input);
         if (input.category.length > 1) {
           return res.status(400).send({
             status: 3,
@@ -60,15 +62,15 @@ router.post("/", (req, res) => {
         }
 
         insertItem(input).then((result) => {
-          console.log(result);
+          // console.log(result);
           res.status(200).send("Ok!");
         });
       });
   } else if (req.body.finalResult) {
     let finalObj = { name: req.body.name, type: req.body.type };
-    console.log("final step: ", finalObj);
+    // console.log("final step: ", finalObj);
     insertItem(finalObj).then((result) => {
-      console.log(result);
+      // console.log(result);
       res.status(200).send("Ok!");
     });
   }
@@ -82,17 +84,17 @@ router.get("/", (req, res) => {
 });
 
 router.put("/", (req, res) => {
-  console.log("req.body: ", req.body.edit);
+  // console.log("req.body: ", req.body.edit);
   editItem(req.body.edit, req.body.id).then((items) => {
-    console.log(items);
+    // console.log(items);
     res.json(items);
   });
 });
 
 router.delete("/", (req, res) => {
-  console.log("req.body: ", req.body.delete.trim());
+  // console.log("req.body: ", req.body.delete.trim());
   deleteItem(req.body.delete.trim()).then((items) => {
-    console.log(items);
+    // console.log(items);
     res.json(items);
   });
 });
