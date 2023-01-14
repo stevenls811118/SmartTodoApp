@@ -1,5 +1,6 @@
+///////////////////
 // ERROR MESSAGING
-
+///////////////////
 #duplicate {
   padding: 30px;
   color: #a3b0db;
@@ -20,8 +21,9 @@
   margin-left: 10px;
   margin-right: 10px;
 }
-
+/////////////////////////
 // LIST STYLING all lists
+/////////////////////////
 .list-sections {
   color: white;
   background-color: #4b4453;
@@ -63,149 +65,14 @@
   background: cadetblue;
 }
 
-// LIST STYLING books
-
-.Books-container .list-items {
-  display: flex;
-  width: 100%;
-  background: rgb(2, 0, 36);
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(237, 195, 30, 1) 0%,
-    rgba(2, 23, 19, 0.5116421568627452) 100%
-  );
-  justify-content: space-between;
-  border-radius: 5px;
-  margin: 0 0 10px 0;
-  padding: 8px;
-  cursor: pointer;
-}
-
-.Books-container .list-items .text {
+.list-sections .list-items .text {
   font-size: 14px;
   font-weight: bold;
   word-break: break-all;
 }
-// LIST STYLING movies
-
-.Movies-container .list-items {
-  display: flex;
-  width: 100%;
-  background: #a3d0db;
-  background: linear-gradient(
-    227deg,
-    #a3d0db 0%,
-    #a3b0db 20%,
-    #a3addb 34%,
-    #a3dbd0 59%,
-    #a3d0db 74%,
-    #a3d0db 100%
-  );
-  background: rgb(2, 0, 36);
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(237, 195, 30, 1) 0%,
-    rgba(2, 23, 19, 0.5116421568627452) 100%
-  );
-  justify-content: space-between;
-  border-radius: 5px;
-  margin: 0 0 10px 0;
-  padding: 8px;
-  cursor: pointer;
-}
-
-// .Movies-container .list-items:hover {
-//   background:cadetblue;
-// }
-
-.Movies-container .list-items .text {
-  font-size: 14px;
-  font-weight: bold;
-  word-break: break-all;
-}
-
-// LIST STYLING products
-//
-
-.Products-container .list-items {
-  display: flex;
-  width: 100%;
-  background: rgb(2, 0, 36);
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(237, 195, 30, 1) 0%,
-    rgba(2, 23, 19, 0.5116421568627452) 100%
-  );
-  justify-content: space-between;
-  border-radius: 5px;
-  margin: 0 0 10px 0;
-  padding: 8px;
-  cursor: pointer;
-}
-
-// .Products-container .list-items:hover {
-//   background:cadetblue;
-// }
-
-.Products-container .list-items .text {
-  font-size: 14px;
-  font-weight: bold;
-  word-break: break-all;
-}
-
-// LIST STYLING restaurants
-
-.Restaurants-container .list-items {
-  display: flex;
-  width: 100%;
-  background: rgb(2, 0, 36);
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(237, 195, 30, 1) 0%,
-    rgba(2, 23, 19, 0.5116421568627452) 100%
-  );
-  justify-content: space-between;
-  border-radius: 5px;
-  margin: 0 0 10px 0;
-  padding: 8px;
-  cursor: pointer;
-}
-
-.Restaurants-container .list-items .text {
-  font-size: 14px;
-  font-weight: bold;
-}
-
-// LIST STYLING others
-
-.Others-container .list-items {
-  display: flex;
-  width: 100%;
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(237, 195, 30, 1) 0%,
-    rgba(2, 23, 19, 0.5116421568627452) 100%
-  );
-  justify-content: space-between;
-  border-radius: 5px;
-  margin: 0 0 10px 0;
-  padding: 8px;
-  cursor: pointer;
-}
-
-.Others-container .list-items .text {
-  font-size: 14px;
-  font-weight: bold;
-  word-break: break-all;
-}
-
-
+///////////////////
 //USER INPUT FIELD
+///////////////////
 .item-entry {
   display: flex;
   justify-content: center;
@@ -217,7 +84,10 @@
   margin-bottom: 20px;
 }
 
-/* Clear input after */
+////////////////////
+//Input styling
+////////////////////
+
 .text-input::after {
   content: "";
   display: table;
