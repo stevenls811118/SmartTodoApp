@@ -3,7 +3,7 @@ LHL Midterm Group Project: Smart TODO App
 
 # Project Goals and Requirements
 
-By combining prior experience in Node.js, PSQL, HTML, CSS and API requests with online research, students are expected to build a Smart TODO App using the given node skeleton as a base (https://github.com/lighthouse-labs/node-skeleton).
+By combining prior experience in Node.js, PSQL, HTML, CSS and API requests with online research, We are expected to build a Smart TODO App using the given node skeleton as a base (https://github.com/lighthouse-labs/node-skeleton).
 
 Users should be able to add the name of a TODO, which the app will then SMART AUTO-CATEGORIZE into one of the following categories:
 - Film / Series (To watch)
